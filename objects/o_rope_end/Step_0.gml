@@ -1,5 +1,3 @@
-var rs = instance_find(o_rope_start, 0);
-ds_list_replace(anchors, 0, pos(rs.x, rs.y));
 
 if (keyboard_check(ord("W"))) move( 0, -5);
 if (keyboard_check(ord("A"))) move(-5,  0);
