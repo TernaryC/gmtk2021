@@ -15,6 +15,3 @@ for (var i = 0; i < ds_list_size(sensors); i++) {
     draw_set_color(c_yellow);
     draw_circle(sensors[| i].x, sensors[| i].y, 5, true);
 }
-
-draw_set_color(c_green);
-draw_circle(snag.x, snag.y, 7.5, true);
