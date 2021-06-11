@@ -15,7 +15,7 @@ for (var i = 1; i < size; i++) {
         //ds_list_add(anchors, getCorner(colBlock, nx, ny));
         //snag = getCorner(colBlock, nx, ny);
         if (point_distance(anchor.x, anchor.y, nx, ny) > 5) {
-            ds_list_add(anchors, pos(nx, ny, s));
+            ds_list_add(anchors, pos(nx, ny));
             break;
         }
     }
