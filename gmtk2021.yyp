@@ -1,7 +1,13 @@
 {
   "resources": [
-    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":0,},
+    {"id":{"name":"o_rope_end","path":"objects/o_rope_end/o_rope_end.yy",},"order":1,},
+    {"id":{"name":"s_rope_block","path":"sprites/s_rope_block/s_rope_block.yy",},"order":0,},
+    {"id":{"name":"o_rope_start","path":"objects/o_rope_start/o_rope_start.yy",},"order":0,},
+    {"id":{"name":"o_rope_block","path":"objects/o_rope_block/o_rope_block.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"macroenum","path":"scripts/macroenum/macroenum.yy",},"order":0,},
+    {"id":{"name":"pos","path":"scripts/pos/pos.yy",},"order":1,},
+    {"id":{"name":"getCorner","path":"scripts/getCorner/getCorner.yy",},"order":2,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
