@@ -10,8 +10,3 @@ if (ds_list_size(anchors) > 0) {
     }
     draw_line(anchors[| i].x, anchors[| i].y, x, y);
 }
-
-for (var i = 0; i < ds_list_size(sensors); i++) {
-    draw_set_color(c_yellow);
-    draw_circle(sensors[| i].x, sensors[| i].y, 5, true);
-}
