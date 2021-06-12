@@ -11,3 +11,11 @@ function vector (_pos, angle, len) {
     var vy = _pos.y + sin(angle) * len;
     return pos(vx, vy);
 }
+
+function repos (_pos) {
+    return pos(_pos.x, _pos.y);
+}
+
+function pos_distance (pos1, pos2) {
+    return point_distance(pos1.x, pos1.y, pos2.x, pos2.y);
+}

@@ -12,6 +12,7 @@ if (ds_list_size(anchors) > 0) {
         draw_set_color(c_red);
         var ap1 = anchors[| i + 1];
         draw_line_width(ap0.x, ap0.y, ap1.x, ap1.y, 2.5);
+        //findSnags(i + 1);
     }
     draw_line(anchors[| i].x, anchors[| i].y, x, y);
 }
