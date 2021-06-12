@@ -5,10 +5,10 @@ function scr_Move(xspd, yspd){
 		var block = instance_place(x+xspd,y,o_Wall)
 		
 		for (var i = 0; i < global.anchorsLen - 1; i++) {
-			print("BUTTS")
+			//print("BUTTS")
 			var block = instance_find(global.anchors, i);
 			if place_meeting(global.anchors[| i].x,global.anchors[| i].y,o_Movable){
-				print("BUTTS2")
+				//print("BUTTS2")
 			}
 		}
 		

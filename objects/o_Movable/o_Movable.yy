@@ -23,10 +23,10 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [
-    {"x":0.0,"y":0.0,},
-    {"x":64.0,"y":0.0,},
-    {"x":64.0,"y":64.0,},
-    {"x":0.0,"y":64.0,},
+    {"x":0,"y":0,},
+    {"x":64,"y":0,},
+    {"x":64,"y":64,},
+    {"x":0,"y":64,},
   ],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
@@ -37,7 +37,7 @@
     {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"variable_name","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"MovableId","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"distanceMoved","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":3,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"isLeftOrdDown","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":3,"value":"False","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"isLeftOrdDown","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
