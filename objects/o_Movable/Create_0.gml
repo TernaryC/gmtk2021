@@ -2,10 +2,11 @@
 // You can write your code in this editor
 function Move(MovableIDEntry) {
 	//show_debug_message(MovableId == MovableIDEntry)
-	show_debug_message(MovableIDEntry)
-	show_debug_message(MovableId)
+	show_debug_message("control:" + string(MovableIDEntry))
+	show_debug_message("my id:" + string(MovableId))
+	show_debug_message("///")
+	
 	if MovableId == MovableIDEntry {
-		
 		if distanceMoved< distanceMax{
 				if (!isVerticle){
 					
@@ -17,7 +18,6 @@ function Move(MovableIDEntry) {
 					distanceMoved++;
 				}
 		}
-		
 	}
 }
 function MoveBack(MovableIDEntry) {
