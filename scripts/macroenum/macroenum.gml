@@ -1,5 +1,4 @@
-#macro precision 5
-
+//Angle values to make life easier
 #macro two_pi (2*pi)
 #macro half_pi (pi * 0.5)
 
