@@ -22,6 +22,8 @@ self.adjustAnchor = function (i, newpos) {
     
     //check previous rope for collisions
     findSnags(i);
+    //check next rope for collisions
+    if (i < anchors_len - 1) findSnags(i + 1);
 }
 
 self.findSnags = function (i) {
@@ -37,8 +39,8 @@ self.findSnags = function (i) {
             var b = collision_point(v.x, v.y, o_rope_block, false, true);
             if (b != noone) {
                 //draw_circle(v.x, v.y, 4, false);
-                //var cpos = b.getCorner(v);
-                //addAnchor(i, cpos);
+                var cpos = b.getCorner(v);
+                addAnchor(i, cpos);
                 break;
             }
         }

@@ -19,3 +19,9 @@ function repos (_pos) {
 function pos_distance (pos1, pos2) {
     return point_distance(pos1.x, pos1.y, pos2.x, pos2.y);
 }
+
+function wrap (val, low, high) {
+    while (val < low)  val += high;
+    while (val >= high) val -= high;
+    return val;
+}
