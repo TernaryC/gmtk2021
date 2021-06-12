@@ -3,7 +3,7 @@
     "name": "s_Movable",
     "path": "sprites/s_Movable/s_Movable.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
