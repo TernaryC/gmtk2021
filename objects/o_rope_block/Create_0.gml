@@ -11,7 +11,7 @@ self.getCorner = function (_pos) {
     
     var angle = angle_from(me, _pos);
     //print("angle:", angle);
-    angle = wrap(angle, 0, 2*pi);
+    angle = wrap(angle, 0, two_pi);
     //print(angle);
     
     var rounded = half_pi * floor(angle / half_pi);
