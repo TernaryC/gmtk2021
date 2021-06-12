@@ -15,7 +15,7 @@
     {"id":{"name":"scr_Push","path":"scripts/scr_Push/scr_Push.yy",},"order":1,},
     {"id":{"name":"o_Movable","path":"objects/o_Movable/o_Movable.yy",},"order":3,},
     {"id":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"order":0,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"playground","path":"rooms/playground/playground.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -31,7 +31,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
