@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
 baseX = x
 baseY = y
 function Move(MovableIDEntry) {
@@ -41,10 +42,7 @@ function MoveBack(MovableIDEntry) {
 			}
 		}
 		else{
-			show_debug_message("x:")
-			show_debug_message(y)
-			show_debug_message("baseX:")
-			show_debug_message(baseY)
+			
 			if (baseY != y) {
 				y= y-additive;
 				distanceMoved--;

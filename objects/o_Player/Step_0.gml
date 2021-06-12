@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+event_inherited();
 xspd = (keyboard_check(ord("D"))- keyboard_check(ord("A"))) * walkSpd;
 yspd = (keyboard_check(ord("S"))- keyboard_check(ord("W"))) * walkSpd;
 
 scr_Move(xspd, yspd)
 scr_Push()
+show_debug_message(anchors)
+
 /*
 if place_meeting(x+xspd,y,o_Pushable){
 	var block = instance_place(x+xspd,y,o_Pushable)

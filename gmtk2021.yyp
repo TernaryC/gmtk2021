@@ -6,7 +6,6 @@
     {"id":{"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},"order":4,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
     {"id":{"name":"s_WallUp","path":"sprites/s_WallUp/s_WallUp.yy",},"order":5,},
-    {"id":{"name":"Gate","path":"objects/Gate/Gate.yy",},"order":5,},
     {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":2,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":6,},
     {"id":{"name":"s_Movable","path":"sprites/s_Movable/s_Movable.yy",},"order":2,},
@@ -39,6 +38,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
   ],
   "Folders": [

@@ -33,6 +33,7 @@
             {"propertyId":{"name":"MovableId","path":"objects/o_Movable/o_Movable.yy",},"objectId":{"name":"o_Movable","path":"objects/o_Movable/o_Movable.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"o_Movable","path":"objects/o_Movable/o_Movable.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":2.5,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":480.0,"y":320.0,"resourceVersion":"1.0","name":"inst_6E2B154","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Pushable","path":"objects/o_Pushable/o_Pushable.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":832.0,"y":448.0,"resourceVersion":"1.0","name":"inst_7794A22","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"o_rope_start","path":"objects/o_rope_start/o_rope_start.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":704.0,"y":544.0,"resourceVersion":"1.0","name":"inst_659EB6F6","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":null,"x":0,"y":0,"tiles":{"SerialiseWidth":3,"SerialiseHeight":2,"TileSerialiseData":[
 0,2147483648,2147483648,
@@ -54,6 +55,7 @@
     {"name":"inst_2BD5FF8C","path":"rooms/playground/playground.yy",},
     {"name":"inst_6E2B154","path":"rooms/playground/playground.yy",},
     {"name":"inst_7794A22","path":"rooms/playground/playground.yy",},
+    {"name":"inst_659EB6F6","path":"rooms/playground/playground.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

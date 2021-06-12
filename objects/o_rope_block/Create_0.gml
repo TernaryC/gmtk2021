@@ -1,7 +1,9 @@
 self.getCorner = function (_pos) {
     //print("corner time")
     var me = pos(x, y);
-    var limit = pos(x + sprite_width / 2, y + sprite_height / 2);
+
+	
+    var limit = pos(x + sprite_width / 2, y + sprite_height / 2 );
     var corner = angle_from(me, limit);
     var cornlength = pos_distance(me, limit);
     //print("me/limt:", me, limit)

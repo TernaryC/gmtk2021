@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "o_rope_end",
+    "path": "objects/o_rope_end/o_rope_end.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
