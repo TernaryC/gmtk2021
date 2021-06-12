@@ -1,3 +1,8 @@
+if (!init) {
+    move( 1, 0);
+    move(-1, 0);
+    init = true;
+}
 
 if (mouse_check_button_pressed(mb_left)) {
     addAnchor(1, pos(mouse_x, mouse_y));

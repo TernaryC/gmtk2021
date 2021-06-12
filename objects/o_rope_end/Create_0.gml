@@ -2,12 +2,39 @@
 self.move = function (distance, angle) {
     //print("MOVING", distance, angle)
     //print("POSITION", x, y)
+    
     for (var i = 0; i < distance; i++) {
         var v = vector(pos(x, y), angle, 1);
         //print("STEP", v.x, v.y)
         x = v.x;
         y = v.y;
         adjustAnchor(anchors_len - 1, pos(x, y));
+    }
+}
+
+self.getSnag = function (i) {
+    if (i + 1 > anchors_len - 1) return 0;
+    if (i < 0) return 0;
+    //var a = angle_from(anchors[| i], anchors[| i + 1]);
+    var a = anchors[| i + 1].angle;
+    
+    return sign(anchors[| i].angle - a);
+}
+
+self.recordSnags = function (i) {
+    var s = i - 1 > 0 ? i - 1 : 0;
+    for (var j = s; j < i; j++) {
+        //print(j)
+        var dir = getSnag(j);
+        //if (dir != -1) print(j, dir)
+        var old = anchors[| j].dir;
+        if (old == 0) anchors[| j].dir = dir;
+        else {
+            if (dir != anchors[| j].dir) {
+                anchors[| j].dir = dir;
+                //removeAnchor(j);
+            }
+        }
     }
 }
 
@@ -24,6 +51,11 @@ self.adjustAnchor = function (i, newpos) {
     findSnags(i);
     //check next rope for collisions
     if (i < anchors_len - 1) findSnags(i + 1);
+    
+    recordSnags(i);
+    
+    //checkUnsnags(i);
+    //checkUnsnags(i + 1);
 }
 
 self.findSnags = function (i) {
@@ -47,6 +79,14 @@ self.findSnags = function (i) {
     }
 }
 
+self.removeAnchor = function (i) {
+    if (i >= anchors_len || i < 0) return;
+    ds_list_delete(anchors, i);
+    anchors_len--;
+    if (i > 0) realignAnchor(i)
+    if (i < anchors_len - 1) realignAnchor(i + 1);
+}
+
 self.addAnchor = function (i, _pos) {
     var _angle;
     if (i != 0)
@@ -56,17 +96,31 @@ self.addAnchor = function (i, _pos) {
     var anchor = {
         x : _pos.x,
         y : _pos.y,
-        angle : _angle
+        angle : _angle,
+        dir : 0
     }
     ds_list_insert(anchors, i, anchor);
     if (i <= anchors_len - 1) realignAnchor(i + 1);
+    //if (i > 0) anchors[| i].dir = getSnag(i - 1);
     anchors_len++;
 }
 
 self.realignAnchor = function (i) {
     if (i - 1 < 0 or i >= anchors_len) return;
-    var _angle = angle_from(anchors[| i - 1], anchors[| i]);
-    anchors[| i].angle = _angle;
+    var oldangle = anchors[| i].angle;
+    var newangle = angle_from(anchors[| i - 1], anchors[| i]);
+    
+    /*
+    var difference = newangle - oldangle;
+    if (sign(oldangle) != sign(newangle)) {
+        if (abs(oldangle) > half_pi and abs(newangle) > half_pi) {
+            var newold = oldangle + (2*pi);
+            difference = newangle - newold;
+        }
+    }
+    /**/
+    
+    anchors[| i].angle = newangle;
 }
 
 //list of anchors along chain
@@ -75,6 +129,8 @@ var rs = instance_find(o_rope_start, 0);
 anchors_len = 0;
 addAnchor(0, pos(x, y));
 addAnchor(1, pos(rs.x, rs.y));
+
+init = false;
 //the first anchor is always the o_rope_start object
 //the last anchor is always the o_rope_end object
 
