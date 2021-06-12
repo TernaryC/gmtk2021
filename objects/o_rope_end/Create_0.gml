@@ -53,7 +53,8 @@ self.recordSnags = function (i) {
 
         //if j has not been given a sign value, set it to the
         // newly calculated one (dir)
-        if (old == 0) anchors[| j].dir = dir;
+        //also, do not attempt to delete the first or last anchor
+        if (old == 0 || j == 0 || j == anchors_len - 1) anchors[| j].dir = dir;
         else {
             //if j's sign value has changed since it's creation,
             // it needs to be unsnagged and removed
@@ -102,17 +103,14 @@ self.findSnags = function (i) {
         //angle of rope from anchor_prev to anchor
         var angle = anchor.angle;
         
-        /* Botched optimization. WIP */
-        var cv = vector(anchor_prev, angle, length);
-        var check = collision_line(anchor_prev.x, anchor_prev.y, cv.x, cv.y, o_rope_block, false, true);
+        //var check = collision_line(anchor_prev.x, anchor_prev.y, anchor.x, anchor.y, o_rope_block, true, true);
         //if (check == noone) return;
-        /**/
-
+        
         //check each pixel along the rope in question for collisions
         for (var l = 1; l < length; l++) {
             //current position on rope to checkk
             var v = vector(anchor_prev, angle, l);
-
+            
             //check for collision at point v
             var b = collision_point(v.x, v.y, o_rope_block, false, true);
             

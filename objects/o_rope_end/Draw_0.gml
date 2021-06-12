@@ -1,3 +1,8 @@
+/* DEBUG DRAW CODE */
+draw_set_color(c_blue);
+draw_text(10, 10, "anchors_len: " + string(anchors_len));
+draw_text(10, 25, "size(anchors): " + string(ds_list_size(anchors)));
+
 /* DEBUG DRAW CODE FOR ROPE */
 
 //draw red circle at player's location
