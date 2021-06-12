@@ -2,19 +2,12 @@ function pos (_x, _y) {
     return { x : _x, y : _y };
 }
 
-function ang (p1, p2) {
-    var len = point_distance(p1.x, p1.y, p2.x, p2.y);
-    var a   = point_direction(p1.x, p1.y, p2.x, p2.y);
-    a = degtorad(a);
-    return {length : len, angle : a}
+function angle_from (pos1, pos2) {
+    return arctan2(pos2.y - pos1.y, pos2.x - pos1.x);
 }
 
-function angpos (p, a, l) {
-    var _x = p.x + cos(a) * l
-    var _y = p.y + sin(a) * l
-    return pos(_x, _y);
-}
-
-function posang (a, o) {
-    return degtorad(point_direction(a.x, a.y, o.x, o.y));
+function vector (_pos, angle, len) {
+    var vx = _pos.x + cos(angle) * len;
+    var vy = _pos.y + sin(angle) * len;
+    return pos(vx, vy);
 }
