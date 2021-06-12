@@ -3,10 +3,8 @@
 baseX = x
 baseY = y
 function Move(MovableIDEntry) {
-	//show_debug_message(MovableId == MovableIDEntry)
-	show_debug_message("control:" + string(MovableIDEntry))
-	show_debug_message("my id:" + string(MovableId))
-	show_debug_message("///")
+	
+
 	additive = 1
 	xspd = 0 
 	yspd = 0
@@ -26,7 +24,7 @@ function Move(MovableIDEntry) {
 				else{
 					yspd = additive;
 					
-					scr_Move(yspd,0)
+					scr_Move(0,yspd)
 					distanceMoved++;
 				}
 		}
@@ -37,17 +35,18 @@ function MoveBack(MovableIDEntry) {
 		if (!isVerticle){
 			
 			if (baseX != x) {
-				xspd = -additive
 				
-				scr_Move(xspd,0)
+				x= x-additive;
 				distanceMoved--;
 			}
 		}
 		else{
+			show_debug_message("x:")
+			show_debug_message(y)
+			show_debug_message("baseX:")
+			show_debug_message(baseY)
 			if (baseY != y) {
-				yspd = -additive
-				
-				scr_Move(0,yspd)
+				y= y-additive;
 				distanceMoved--;
 			}
 		}

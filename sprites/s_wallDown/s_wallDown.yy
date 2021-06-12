@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 14,
-  "bbox_right": 26,
-  "bbox_top": 17,
-  "bbox_bottom": 28,
+  "bbox_left": 2,
+  "bbox_right": 61,
+  "bbox_top": 1,
+  "bbox_bottom": 62,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2f963257-aa0e-4a04-825a-4c7db67b84af","path":"sprites/s_Button/s_Button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2f963257-aa0e-4a04-825a-4c7db67b84af","path":"sprites/s_Button/s_Button.yy",},"LayerId":{"name":"aec1f79a-117f-4692-9413-bcd6c5cc67b1","path":"sprites/s_Button/s_Button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_Button","path":"sprites/s_Button/s_Button.yy",},"resourceVersion":"1.0","name":"2f963257-aa0e-4a04-825a-4c7db67b84af","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3bc46a57-835e-4893-8478-bf65e2ba34e6","path":"sprites/s_wallDown/s_wallDown.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3bc46a57-835e-4893-8478-bf65e2ba34e6","path":"sprites/s_wallDown/s_wallDown.yy",},"LayerId":{"name":"60c23537-33ac-41b7-b047-f78e79276856","path":"sprites/s_wallDown/s_wallDown.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},"resourceVersion":"1.0","name":"3bc46a57-835e-4893-8478-bf65e2ba34e6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_Button","path":"sprites/s_Button/s_Button.yy",},
+    "spriteId": {"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"cc347aef-be29-4786-a1af-4177cf303a38","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2f963257-aa0e-4a04-825a-4c7db67b84af","path":"sprites/s_Button/s_Button.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"913225dd-f0bf-477b-8f60-1ce6a52e19be","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3bc46a57-835e-4893-8478-bf65e2ba34e6","path":"sprites/s_wallDown/s_wallDown.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_Button","path":"sprites/s_Button/s_Button.yy",},
+    "parent": {"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},
     "resourceVersion": "1.3",
-    "name": "s_Button",
+    "name": "s_wallDown",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"aec1f79a-117f-4692-9413-bcd6c5cc67b1","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"60c23537-33ac-41b7-b047-f78e79276856","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Bullshit.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_Button",
+  "name": "s_wallDown",
   "tags": [],
   "resourceType": "GMSprite",
 }
