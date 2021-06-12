@@ -19,7 +19,7 @@ self.getSnag = function (i) {
     if (i < 0) return 0;
     //var a = angle_from(anchors[| i], anchors[| i + 1]);
     var a = anchors[| i + 1].angle;
-    //print("//getsnag/",i,"....FRAME:", frames)
+    //print("://getsnag/",i,"....FRAME:", frames)
     //print("/angle",anchors[| i].angle)
     //print("/a",a)
     //print("/dif",anchors[| i].angle - a)
@@ -31,11 +31,11 @@ self.getSnag = function (i) {
 self.recordSnags = function (i) {
     var s = i - 1 > 0 ? i - 1 : 0;
     for (var j = s; j < i; j++) {
-        //print("//SNAGGING/",j,"of",i,"....FRAME:", frames);
+        //print("://SNAGGING/",j,"of",i,"....FRAME:", frames);
         //print(j)
         var dir = getSnag(j);
         //print("/dir",dir);
-        //if (dir != -1) print(j, dir)
+        //if (dir != -1) //print(j, dir)
         var old = anchors[| j].dir;
         //print("/olda",anchors[| j].angle);
         //print("/old",old);
@@ -52,7 +52,7 @@ self.recordSnags = function (i) {
 }
 
 self.adjustAnchor = function (i, newpos) {
-    //print("//ADJUSTING/",i,"to",newpos,"....FRAME:", frames);
+    //print("://ADJUSTING/",i,"to",newpos,"....FRAME:", frames);
     //print("\n")
     var oldpos = repos(anchors[| i]);
     
@@ -72,24 +72,24 @@ self.adjustAnchor = function (i, newpos) {
 
 self.findSnags = function (i) {
     if (i > 0) {
-        //print("//FINDING/",i,"....FRAME:",frames)
         var anchor = anchors[| i];
         var anchor_prev = anchors[| i - 1];
         var length = pos_distance(anchor_prev, anchor);
         var angle = anchor.angle;
-        //print("/anchor",anchor)
-        //print("/prev",anchor_prev)
-        //print("/length",length)
         //print()
         for (var l = 0; l < length; l++) {
             var v = vector(anchor_prev, angle, l);
-            //print("/l, v",l,", ",v)
             //draw_set_color(c_lime);
             //draw_circle(v.x, v.y, 2, true);
             var b = collision_point(v.x, v.y, o_rope_block, false, true);
             if (b != noone) {
                 //draw_circle(v.x, v.y, 4, false);
                 var cpos = b.getCorner(v);
+                //print("://FINDING/",i,"....FRAME:",frames)
+                //print("/anchor",anchor)
+                //print("/prev",anchor_prev)
+                //print("/length",length)
+                //print("/l, v",l,", ",v)
                 //print("//adding...",i,cpos)
                 addAnchor(i, cpos, angle);
                 break;
@@ -100,7 +100,7 @@ self.findSnags = function (i) {
 }
 
 self.removeAnchor = function (i) {
-    //print("//REMOVING/",i,"....FRAME:",frames);
+    //print("://REMOVING/",i,"....FRAME:",frames);
     //print("\n")
     if (i >= anchors_len || i < 0) return;
     ds_list_delete(anchors, i);
@@ -139,13 +139,13 @@ self.realignAnchor = function (i) {
     var record = abs(oldangle - newangles[0]);
     for (var j = 1; j <= 2; j++) {
         var test = abs(oldangle - newangles[j])
-        if (test < least) {
+        if (test < record) {
             least = newangles[j];
             record = test;
         }
     }
     //record = newangles[0];
-    //print("//REALIGN/",i,"....FRAME:", frames)
+    //print("://REALIGN/",i,"....FRAME:", frames)
     //print("/node",i)
     if (i == anchors_len - 1) //print("/END")
     //print("/old:", oldangle)
