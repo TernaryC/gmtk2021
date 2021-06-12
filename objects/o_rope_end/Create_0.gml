@@ -232,6 +232,8 @@ anchors_len = 0; //length of anchors list
 // Create first and last anchors
 addAnchor(0, pos(x, y), 0);
 addAnchor(1, pos(rs.x, rs.y), 0);
+global.anchors = anchors
+global.anchorsLen = anchors_len
 //the first anchor is always the o_rope_start object
 //the last anchor is always the o_rope_end object
 

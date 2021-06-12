@@ -30,3 +30,5 @@ if (keyboard_check(ord("R"))) {room_restart();
 	addAnchor(0, pos(x, y), 0);
 	addAnchor(1, pos(rs.x, rs.y), 0);
 }
+global.anchors = anchors
+global.anchorsLen = anchors_len
