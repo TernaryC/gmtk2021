@@ -3,7 +3,7 @@
 function scr_Move(xspd, yspd){
 	if !global.paused{
 		var block = instance_place(x+xspd,y,o_Wall)
-		
+		/*
 		for (var i = 0; i < global.anchorsLen; i++) {
 			print("BUTTS")
 			var block = instance_find(global.anchors, i);
@@ -11,7 +11,7 @@ function scr_Move(xspd, yspd){
 				print("BUTTS2")
 			}
 		}
-		
+		*/
 		if place_meeting(x+xspd,y,o_Wall) and !o_Wall.isDown{
 			while(!place_meeting(x+sign(xspd),y,o_Wall)){
 				x= x+sign(xspd)
