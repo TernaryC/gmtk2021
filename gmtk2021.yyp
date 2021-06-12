@@ -8,6 +8,7 @@
     {"id":{"name":"macroenum","path":"scripts/macroenum/macroenum.yy",},"order":0,},
     {"id":{"name":"pos","path":"scripts/pos/pos.yy",},"order":1,},
     {"id":{"name":"getCorner","path":"scripts/getCorner/getCorner.yy",},"order":2,},
+    {"id":{"name":"print","path":"scripts/print/print.yy",},"order":3,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},

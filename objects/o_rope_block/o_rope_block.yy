@@ -3,7 +3,7 @@
     "name": "s_rope_block",
     "path": "sprites/s_rope_block/s_rope_block.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
