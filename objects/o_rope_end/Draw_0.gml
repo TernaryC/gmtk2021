@@ -8,6 +8,7 @@ draw_circle(x, y, 10, false);
 if (ds_list_size(anchors) > 0) {
     var i = 0
     for (; i < ds_list_size(anchors) - 1; i++) {
+        //these variables are terribly named, I know.
         var ap0 = anchors[| i]
         var ap1 = anchors[| i + 1];
         

@@ -14,6 +14,7 @@ self.move = function (distance, angle) {
 
         x = v.x;
         y = v.y;
+        
         //move the last anchor in the list to the player's
         // new position
         adjustAnchor(anchors_len - 1, pos(x, y));
@@ -69,6 +70,7 @@ self.adjustAnchor = function (i, newpos) {
     //reposition anchor to new position
     anchors[| i].x = newpos.x;
     anchors[| i].y = newpos.y;
+    
     //update anchor angle
     realignAnchor(i);
     
@@ -96,6 +98,7 @@ self.findSnags = function (i) {
         
         //length of rope between both anchors
         var length = pos_distance(anchor_prev, anchor);
+        
         //angle of rope from anchor_prev to anchor
         var angle = anchor.angle;
         
@@ -105,8 +108,7 @@ self.findSnags = function (i) {
         //if (check == noone) return;
         /**/
 
-        //check each pixel along the rope in question for
-        // collisions
+        //check each pixel along the rope in question for collisions
         for (var l = 1; l < length; l++) {
             //current position on rope to checkk
             var v = vector(anchor_prev, angle, l);
@@ -147,14 +149,6 @@ self.removeAnchor = function (i) {
 self.addAnchor = function (i, _pos, _angle) {
     /// Add a new anchor to the list
     
-    if (_angle == undefined) _angle = 0 //default angle to 0
-    if (_angle == 0 and i != 0) {
-        //get angle from last anchor to new anchor
-        //ONLY DO THIS IF _angle WAS NOT SUPPLIED
-        //(this may not be neccessary code)
-        _angle = angle_from(anchors[| i - 1], _pos);
-    }
-    
     // New anchor object
     var anchor = {
         x : _pos.x,
@@ -167,7 +161,7 @@ self.addAnchor = function (i, _pos, _angle) {
     ds_list_insert(anchors, i, anchor);
     anchors_len++;
     
-    //Update the following anchor in the list's angle
+    //Update the angle of the next anchor in the list
     if (i <= anchors_len - 1) realignAnchor(i + 1);
 }
 
@@ -184,8 +178,10 @@ self.realignAnchor = function (i) {
     newangles[0] = angle_from(anchors[| i - 1], anchors[| i]);
     newangles[1] = newangles[0] - two_pi;
     newangles[2] = newangles[0] + two_pi;
-    //newangles[0] is the angle from the previous anchor to this one
-    //newangles[1] and [2] are the same angle but +/- two_pi
+    // newangles[0] is the angle from the previous anchor to the
+    //  current one
+    // newangles[1] and [2] are the same angle but +/- two_pi
+    //  This is important to prevent the pi boundry (see below)
     
     
     /* Find the angle closest to the old angle, and use that one */
@@ -193,6 +189,7 @@ self.realignAnchor = function (i) {
     //default to using angle 0
     // (this variable stores which angle has the smallest calculated difference)
     var least = newangles[0];
+    
     //difference between old angle and angle 0
     // (this variable stores the smallest difference calculated so far)
     var record = abs(oldangle - newangles[0]);
@@ -209,9 +206,11 @@ self.realignAnchor = function (i) {
         }
     }
     
-    //^^ This is to prevent the pi boundry, which causes the rope
-    // to delete anchors and behave unpredictably when a rope's
-    // angle passes +/- pi
+    //This whole mess of finding the closest angle to the current
+    // one is to prevent the pi boundry, which causes the rope
+    // to delete anchors and behave unpredictably when an anchor's
+    // angle passes +/-pi
+    //I can't fully explain why this is neccessary, but it is.
     
     /**/
     
@@ -224,6 +223,8 @@ self.realignAnchor = function (i) {
 anchors = ds_list_create();
 var rs = instance_find(o_rope_start, 0);
 anchors_len = 0; //length of anchors list
+
+// Create first and last anchors
 addAnchor(0, pos(x, y), 0);
 addAnchor(1, pos(rs.x, rs.y), 0);
 //the first anchor is always the o_rope_start object

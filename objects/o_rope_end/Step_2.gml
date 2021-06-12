@@ -7,3 +7,4 @@ if (rs.x != anchors[| 0].x or rs.y != anchors[| 0].y)
     adjustAnchor(0, pos(rs.x, rs.y));
     
 /**/
+
