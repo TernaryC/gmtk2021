@@ -1,5 +1,7 @@
-/// Prints a message to the console. Takes any amount of parameters
 function print () {
+    /// Prints a message to the console. Takes any amount of parameters
+    ///  Used for debugging
+    
     var message = "";
     for (var i = 0; i < argument_count; i++) {
         message += string(argument[i]);
