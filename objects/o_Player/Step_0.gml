@@ -6,7 +6,7 @@ yspd = (keyboard_check(ord("S"))- keyboard_check(ord("W"))) * walkSpd;
 
 //scr_Move(xspd, yspd)
 scr_Push()
-show_debug_message(anchors)
+//show_debug_message(anchors)
 
 /*
 if place_meeting(x+xspd,y,o_Pushable){

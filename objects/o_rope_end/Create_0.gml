@@ -12,16 +12,18 @@ self.move = function (distance, angle) {
         //position 1 pixel along in movement
         var v = vector(pos(x, y), angle, 1);
 
-        //x = v.x;
-        //y = v.y;
-		
-		//converts your movement system to my movement system
-		//which will check for collisions
-		scr_Move(v.x-x, v.y-y)
-        
-        //move the last anchor in the list to the player's
-        // new position
-        adjustAnchor(anchors_len - 1, pos(x, y));
+        //don't move if the rope would extend past it's length
+        if (getLength(anchors_len - 1, pos(v.x, v.y)) < rope_length) {
+    		//converts your movement system to my movement system
+    		//which will check for collisions
+    		scr_Move(v.x-x, v.y-y)
+            
+            //move the last anchor in the list to the player's
+            // new position
+            adjustAnchor(anchors_len - 1, pos(x, y));
+        } else {
+            break;
+        }
     }
 }
 
@@ -68,10 +70,11 @@ self.recordSnags = function (i) {
         }
     }
 }
-self.location = function (i) {
 
+self.location = function (i) {
 	return pos(anchors[| i].x, anchors[| i].y)
 }
+
 self.adjustAnchor = function (i, newpos) {
     /// Move an anchor
     
@@ -128,7 +131,7 @@ self.findSnags = function (i) {
                 var cpos = b.getCorner(v);
 
                 //add new anchor at collision
-                addAnchor(i, cpos, angle);
+                addAnchor(i, cpos, angle, b);
                 break;
             }
         }
@@ -151,7 +154,7 @@ self.removeAnchor = function (i) {
     if (i < anchors_len - 1) realignAnchor(i + 1);
 }
 
-self.addAnchor = function (i, _pos, _angle) {
+self.addAnchor = function (i, _pos, _angle, _parent) {
     /// Add a new anchor to the list
     
     // New anchor object
@@ -159,7 +162,8 @@ self.addAnchor = function (i, _pos, _angle) {
         x : _pos.x,
         y : _pos.y,
         angle : _angle,
-        dir : 0
+        dir : 0,
+        parent : _parent
     }
     
     //Add new anchor to list
@@ -223,6 +227,20 @@ self.realignAnchor = function (i) {
     anchors[| i].angle = least;
 }
 
+self.getLength = function (ai, testpos) {
+    /// Return length of rope if an anchor was to move to the position
+    ///  testpos. This is important for figuring out if a movement of
+    ///  an anchor will overextend the rope.
+    
+    var length = 0;
+    for (var i = 0; i < anchors_len - 1; i++) {
+        var pos1 = ai == i ? testpos : anchors[| i];
+        var pos2 = ai == i + 1 ? testpos : anchors[| i + 1];
+        length += pos_distance(pos1, pos2);
+    }
+    return length;
+}
+
 
 //list of anchors along chain
 anchors = ds_list_create();
@@ -230,8 +248,8 @@ var rs = instance_find(o_rope_start, 0);
 anchors_len = 0; //length of anchors list
 
 // Create first and last anchors
-addAnchor(0, pos(x, y), 0);
-addAnchor(1, pos(rs.x, rs.y), 0);
+addAnchor(0, pos(x, y), 0, o_rope_start);
+addAnchor(1, pos(rs.x, rs.y), 0, o_rope_end);
 //the first anchor is always the o_rope_start object
 //the last anchor is always the o_rope_end object
 

@@ -3,6 +3,9 @@ draw_set_color(c_blue);
 draw_text(10, 10, "anchors_len: " + string(anchors_len));
 draw_text(10, 25, "size(anchors): " + string(ds_list_size(anchors)));
 
+draw_text(10, 45, "max_length: " + string(rope_length));
+draw_text(10, 60, "getLength(): " + string(getLength()));
+
 /* DEBUG DRAW CODE FOR ROPE */
 
 //draw red circle at player's location
