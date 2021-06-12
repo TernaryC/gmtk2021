@@ -12,8 +12,12 @@ self.move = function (distance, angle) {
         //position 1 pixel along in movement
         var v = vector(pos(x, y), angle, 1);
 
-        x = v.x;
-        y = v.y;
+        //x = v.x;
+        //y = v.y;
+		
+		//converts your movement system to my movement system
+		//which will check for collisions
+		scr_Move(v.x-x, v.y-y)
         
         //move the last anchor in the list to the player's
         // new position
@@ -63,7 +67,10 @@ self.recordSnags = function (i) {
         }
     }
 }
+self.location = function (i) {
 
+	return pos(anchors[| i].x, anchors[| i].y)
+}
 self.adjustAnchor = function (i, newpos) {
     /// Move an anchor
     

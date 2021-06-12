@@ -5,7 +5,7 @@ self.getCorner = function (_pos) {
     var me = pos(x, y);
 
 	
-    var limit = pos(x + sprite_width / 2, y + sprite_height / 2 );
+    
     
     //position of block's bottom right corner
     //NOTE:
