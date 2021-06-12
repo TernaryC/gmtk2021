@@ -11,6 +11,7 @@ self.move = function (distance, angle) {
         y = v.y;
         adjustAnchor(anchors_len - 1, pos(x, y));
     }
+    //recordSnags(anchors_len - 1);
 }
 
 self.getSnag = function (i) {
@@ -18,6 +19,11 @@ self.getSnag = function (i) {
     if (i < 0) return 0;
     //var a = angle_from(anchors[| i], anchors[| i + 1]);
     var a = anchors[| i + 1].angle;
+    //print("//getsnag/",i,"....FRAME:", frames)
+    //print("/angle",anchors[| i].angle)
+    //print("/a",a)
+    //print("/dif",anchors[| i].angle - a)
+    //print("")
     
     return sign(anchors[| i].angle - a);
 }
@@ -25,25 +31,29 @@ self.getSnag = function (i) {
 self.recordSnags = function (i) {
     var s = i - 1 > 0 ? i - 1 : 0;
     for (var j = s; j < i; j++) {
-        print("://SNAGGING/",j,"of",i,"....FRAME:", frames);
+        //print("//SNAGGING/",j,"of",i,"....FRAME:", frames);
         //print(j)
         var dir = getSnag(j);
-        print("")
+        //print("/dir",dir);
         //if (dir != -1) print(j, dir)
         var old = anchors[| j].dir;
+        //print("/olda",anchors[| j].angle);
+        //print("/old",old);
         if (old == 0) anchors[| j].dir = dir;
         else {
-            if (dir != anchors[| j].dir) {
-                print("!!! CAUGHT SNAG:",j)
-                print("\n")
+            if (dir != old) {
+                //print("!!! CAUGHT SNAG:",j)
                 //anchors[| j].dir = dir;
                 removeAnchor(j);
             }
         }
+        //print("\n")
     }
 }
 
 self.adjustAnchor = function (i, newpos) {
+    //print("//ADJUSTING/",i,"to",newpos,"....FRAME:", frames);
+    //print("\n")
     var oldpos = repos(anchors[| i]);
     
     anchors[| i].x = newpos.x;
@@ -58,35 +68,40 @@ self.adjustAnchor = function (i, newpos) {
     if (i < anchors_len - 1) findSnags(i + 1);
     
     recordSnags(i);
-    
-    //checkUnsnags(i);
-    //checkUnsnags(i + 1);
 }
 
 self.findSnags = function (i) {
     if (i > 0) {
+        //print("//FINDING/",i,"....FRAME:",frames)
         var anchor = anchors[| i];
         var anchor_prev = anchors[| i - 1];
         var length = pos_distance(anchor_prev, anchor);
         var angle = anchor.angle;
+        //print("/anchor",anchor)
+        //print("/prev",anchor_prev)
+        //print("/length",length)
+        //print()
         for (var l = 0; l < length; l++) {
             var v = vector(anchor_prev, angle, l);
+            //print("/l, v",l,", ",v)
             //draw_set_color(c_lime);
             //draw_circle(v.x, v.y, 2, true);
             var b = collision_point(v.x, v.y, o_rope_block, false, true);
             if (b != noone) {
                 //draw_circle(v.x, v.y, 4, false);
                 var cpos = b.getCorner(v);
-                addAnchor(i, cpos);
+                //print("//adding...",i,cpos)
+                addAnchor(i, cpos, angle);
                 break;
             }
         }
+        //print("\n")
     }
 }
 
 self.removeAnchor = function (i) {
-    print("://REMOVING/",i,"....FRAME:",frames);
-    print("\n")
+    //print("//REMOVING/",i,"....FRAME:",frames);
+    //print("\n")
     if (i >= anchors_len || i < 0) return;
     ds_list_delete(anchors, i);
     anchors_len--;
@@ -94,11 +109,10 @@ self.removeAnchor = function (i) {
     if (i < anchors_len - 1) realignAnchor(i + 1);
 }
 
-self.addAnchor = function (i, _pos) {
-    var _angle;
-    if (i != 0)
+self.addAnchor = function (i, _pos, _angle) {
+    if (_angle == undefined and i != 0)
         _angle = angle_from(anchors[| i - 1], _pos);
-    else
+    else if (_angle == undefined)
         _angle = 0;
     var anchor = {
         x : _pos.x,
@@ -126,19 +140,18 @@ self.realignAnchor = function (i) {
     for (var j = 1; j <= 2; j++) {
         var test = abs(oldangle - newangles[j])
         if (test < least) {
-            least = test;
-            record = newangles[j];
+            least = newangles[j];
+            record = test;
         }
     }
-    if (record > 0) {
-        print("://REALIGN/",i,"....FRAME:", frames)
-        print("/node",i)
-        if (i == anchors_len - 1) print("/END")
-        print("/old:", oldangle)
-        print("/new:", newangles)
-        print("/dif:final ", record, ":", least)
-        print("\n")
-    }
+    //record = newangles[0];
+    //print("//REALIGN/",i,"....FRAME:", frames)
+    //print("/node",i)
+    if (i == anchors_len - 1) //print("/END")
+    //print("/old:", oldangle)
+    //print("/new:", newangles)
+    //print("/dif:final ", record, ":", least)
+    //print("\n")
     anchors[| i].angle = least;
     
     /*
