@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "s_Wall",
-    "path": "sprites/s_Wall/s_Wall.yy",
+    "name": "Sprite5",
+    "path": "sprites/Sprite5/Sprite5.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "o_Wall",
+    "path": "objects/o_Wall/o_Wall.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -22,6 +25,8 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,7 +35,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_Wall",
+  "name": "o_Pushable",
   "tags": [],
   "resourceType": "GMObject",
 }

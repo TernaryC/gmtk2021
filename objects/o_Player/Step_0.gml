@@ -4,19 +4,28 @@
 xspd = (keyboard_check(ord("D"))- keyboard_check(ord("A"))) * walkSpd;
 yspd = (keyboard_check(ord("S"))- keyboard_check(ord("W"))) * walkSpd;
 
-if place_meeting(x+xspd,y,o_Wall){
-	while(!place_meeting(x+sign(xspd),y,o_Wall)){
-		x= x+sign(xspd)
+scr_Move(xspd, yspd)
+scr_Push()
+/*
+if place_meeting(x+xspd,y,o_Pushable){
+	var block = instance_place(x+xspd,y,o_Pushable)
+	xspd =  xspd/2
+	block.x = block.x +xspd
+	if place_meeting(block.x+xspd,block.y,o_Wall){
+		show_debug_message("butts")
+		while(!place_meeting(block.x+xspd,block.y,o_Wall)){
+			block.x= block.x+sign(xspd)
+			x= x+sign(xspd)
 	}
-	xspd = 0
+	
 }
+if place_meeting(x,y+yspd,o_Pushable){
+	var block = instance_place(x,y+yspd,o_Pushable)
+	yspd =  yspd/2
 
-if place_meeting(x,y+yspd,o_Wall){
-	while(!place_meeting(x,y+sign(yspd),o_Wall)){
-		y= y+sign(yspd)
+	block.y = block.y +yspd
+	
 	}
-	yspd = 0
 }
+*/
 
-x = x+xspd
-y = y+yspd

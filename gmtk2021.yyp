@@ -1,11 +1,15 @@
 {
   "resources": [
     {"id":{"name":"o_Wall","path":"objects/o_Wall/o_Wall.yy",},"order":1,},
+    {"id":{"name":"o_Pushable","path":"objects/o_Pushable/o_Pushable.yy",},"order":4,},
     {"id":{"name":"s_Player","path":"sprites/s_Player/s_Player.yy",},"order":0,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
     {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":2,},
+    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":15,},
     {"id":{"name":"s_Movable","path":"sprites/s_Movable/s_Movable.yy",},"order":2,},
+    {"id":{"name":"scr_Move","path":"scripts/scr_Move/scr_Move.yy",},"order":0,},
     {"id":{"name":"s_Button","path":"sprites/s_Button/s_Button.yy",},"order":3,},
+    {"id":{"name":"scr_Push","path":"scripts/scr_Push/scr_Push.yy",},"order":1,},
     {"id":{"name":"o_Movable","path":"objects/o_Movable/o_Movable.yy",},"order":3,},
     {"id":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
