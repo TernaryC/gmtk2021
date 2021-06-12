@@ -1,13 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 if place_meeting(x,y,o_Player){
-	if distanceMoved< distanceMax{
-		o_Movable.x = o_Movable.x+1;	
-		distanceMoved++;
-	}
+	o_Movable.Move(controls)
 } else {
-	if (distanceMoved > 0) {
-		o_Movable.x--;
-		distanceMoved--;
-	}
+	o_Movable.MoveBack(controls)
 }
