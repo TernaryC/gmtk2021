@@ -1,5 +1,4 @@
 {
-  "name": "ts_lab",
   "spriteId": {
     "name": "tss_lab",
     "path": "sprites/tss_lab/tss_lab.yy",
@@ -383,6 +382,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "ts_lab",
   "tags": [],
   "resourceType": "GMTileSet",
 }
