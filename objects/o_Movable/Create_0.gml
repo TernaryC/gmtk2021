@@ -20,20 +20,26 @@ self.Move = function(MovableIDEntry) {
 					
 					xspd = additive 
 					
-					scr_Move(xspd,0)
-					distanceMoved++;
-					moved = true;
+					if (!place_meeting(x + xspd, y, o_Player)) {
+						scr_Move(xspd,0)
+						distanceMoved++;
+						moved = true;
+					}
 				}
 				else{
 					yspd = additive;
 					
-					scr_Move(0,yspd)
-					distanceMoved++;
-					moved = true;
+					if (!place_meeting(x, y + yspd, o_Player)) {
+						scr_Move(0,yspd)
+						distanceMoved++;
+						moved = true;
+					}
 				}
 		}
-		adjustAnchors(xspd, yspd);
-		if (moved) checkAnchors(x, y);
+		if (moved) {
+			adjustAnchors(xspd, yspd);
+			checkAnchors(x, y);
+		}
 	}
 }
 
@@ -45,23 +51,29 @@ self.MoveBack = function (MovableIDEntry) {
 		if (!isVerticle){
 			
 			if (baseX != x) {
-				x = x-additive;
-				xoff = -additive;
-				distanceMoved--;
-				moved = true;
+				if (!place_meeting(x - additive, y, o_Player)) {
+					x = x-additive;
+					xoff = -additive;
+					distanceMoved--;
+					moved = true;
+				}
 			}
 		}
 		else{
 			
 			if (baseY != y) {
-				y = y - additive;
-				yoff = -additive;
-				distanceMoved--;
-				moved = true
+				if (!place_meeting(x, y - additive, o_Player)) {
+					y = y - additive;
+					yoff = -additive;
+					distanceMoved--;
+					moved = true
+				}
 			}
 		}
-		adjustAnchors(xoff, yoff);
-		if (moved) checkAnchors(x, y);
+		if (moved) {
+			adjustAnchors(xoff, yoff);
+			checkAnchors(x, y);
+		}
 	}
 }
 

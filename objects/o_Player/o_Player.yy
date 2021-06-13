@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "s_Player",
-    "path": "sprites/s_Player/s_Player.yy",
+    "name": "s_Bot_UR",
+    "path": "sprites/s_Bot_UR/s_Bot_UR.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "s_Bot_Collision",
+    "path": "sprites/s_Bot_Collision/s_Bot_Collision.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "o_rope_end",

@@ -28,8 +28,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Rope Objects",
+    "path": "folders/Objects/Rope Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_rope_end",

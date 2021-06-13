@@ -4,4 +4,8 @@ global.paused = false
 walkSpd = 4
 xspd = 0
 yspd = 0
+
+lastx = 1
+lasty = 1
+
 event_inherited();
