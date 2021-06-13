@@ -3,6 +3,7 @@
     {"id":{"name":"o_Wall","path":"objects/o_Wall/o_Wall.yy",},"order":2,},
     {"id":{"name":"sfx_success","path":"sounds/sfx_success/sfx_success.yy",},"order":5,},
     {"id":{"name":"o_Pushable","path":"objects/o_Pushable/o_Pushable.yy",},"order":1,},
+    {"id":{"name":"s_Collectable","path":"sprites/s_Collectable/s_Collectable.yy",},"order":10,},
     {"id":{"name":"sfx_unpress","path":"sounds/sfx_unpress/sfx_unpress.yy",},"order":7,},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":8,},
     {"id":{"name":"o_Collectable","path":"objects/o_Collectable/o_Collectable.yy",},"order":3,},
