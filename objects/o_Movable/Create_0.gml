@@ -3,7 +3,8 @@
 event_inherited();
 baseX = x
 baseY = y
-
+xspd = 0 
+yspd = 0
 distanceMoved = 0;
 
 additive = 1
@@ -12,8 +13,8 @@ if isLeftOrUp{
 }
 
 self.Move = function(MovableIDEntry) {
-	var xspd = 0 
-	var yspd = 0
+	xspd = 0 
+	yspd = 0
 	
 	var moved = false;
 	if (global.paused) return;
