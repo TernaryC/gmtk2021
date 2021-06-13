@@ -97,6 +97,7 @@ self.adjustAnchor = function (i, newpos) {
     //by default, check to see if this overextends the rope
     //checkExtend ??= true
 
+
     //reposition anchor to new position
     anchors[| i].x = newpos.x;
     anchors[| i].y = newpos.y;
