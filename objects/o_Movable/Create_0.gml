@@ -45,7 +45,7 @@ self.MoveBack = function (MovableIDEntry) {
 	if MovableId == MovableIDEntry {
 		if (!isVerticle){
 			
-			if (baseX != x) {
+			if (distanceMoved >=0) {
 				x = x-additive;
 				xoff = -additive;
 				distanceMoved--;
@@ -54,7 +54,7 @@ self.MoveBack = function (MovableIDEntry) {
 		}
 		else{
 			
-			if (baseY != y) {
+			if (distanceMoved >=0) {
 				y = y - additive;
 				yoff = -additive;
 				distanceMoved--;
