@@ -6,3 +6,11 @@ if (global.paused) {
         can_mute = false;
     } else can_mute = true;
 }
+
+if (wiping) {
+    wipe++;
+    if (newwipe) {
+        wipedir = irandom(3)
+        newwipe = false
+    }
+}

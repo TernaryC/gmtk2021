@@ -1,6 +1,14 @@
+randomise()
+
 global.paused = false;
 global.muted = false;
 can_mute = true;
+
+wiping = false;
+wipe = 0;
+restart = false;
+wipedir = 0;
+newwipe = true;
 
 left = 48;
 right = room_width - 48;
