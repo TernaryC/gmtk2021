@@ -17,10 +17,13 @@ self.move = function (distance, angle, force) {
         //position 1 pixel along in movement
         var v = vector(pos(x, y), angle, 1);
 
+	
         //don't move if the rope would extend past it's length
         // (ignore that check if this movement is forced)
         if (force || getLength(anchors_len - 1, pos(v.x, v.y)) < rope_length) {
-    		//converts your movement system to my movement system
+    		
+			
+			//converts your movement system to my movement system
     		//which will check for collisions
     		scr_Move(v.x-x, v.y-y)
 
@@ -28,6 +31,7 @@ self.move = function (distance, angle, force) {
             // new position
             adjustAnchor(anchors_len - 1, pos(x, y));
         } else {
+			
             break;
         }
     }
