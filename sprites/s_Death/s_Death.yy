@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 15,
+  "bbox_right": 63,
   "bbox_top": 0,
-  "bbox_bottom": 31,
+  "bbox_bottom": 63,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 32,
-  "height": 32,
+  "width": 64,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1ea9393b-5c1a-49b6-b56a-04f560559b23","path":"sprites/s_Wall/s_Wall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1ea9393b-5c1a-49b6-b56a-04f560559b23","path":"sprites/s_Wall/s_Wall.yy",},"LayerId":{"name":"06eb7e56-1414-4b5e-8131-a15bd290b025","path":"sprites/s_Wall/s_Wall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"resourceVersion":"1.0","name":"1ea9393b-5c1a-49b6-b56a-04f560559b23","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"0c0497cf-a705-43a5-99d3-d9aae3747087","path":"sprites/s_Death/s_Death.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"0c0497cf-a705-43a5-99d3-d9aae3747087","path":"sprites/s_Death/s_Death.yy",},"LayerId":{"name":"facf6c48-27bf-4585-97cb-baecc07c996e","path":"sprites/s_Death/s_Death.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_Death","path":"sprites/s_Death/s_Death.yy",},"resourceVersion":"1.0","name":"0c0497cf-a705-43a5-99d3-d9aae3747087","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},
+    "spriteId": {"name":"s_Death","path":"sprites/s_Death/s_Death.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b1682f67-3a41-425d-a7a7-0f88add36817","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1ea9393b-5c1a-49b6-b56a-04f560559b23","path":"sprites/s_Wall/s_Wall.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1148b252-3219-4215-8dd9-a944f852cd14","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0c0497cf-a705-43a5-99d3-d9aae3747087","path":"sprites/s_Death/s_Death.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 16,
-    "yorigin": 16,
+    "xorigin": 32,
+    "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},
+    "parent": {"name":"s_Death","path":"sprites/s_Death/s_Death.yy",},
     "resourceVersion": "1.3",
-    "name": "s_Wall",
+    "name": "s_Death",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"06eb7e56-1414-4b5e-8131-a15bd290b025","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"facf6c48-27bf-4585-97cb-baecc07c996e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Placeholder/Bullshit.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_Wall",
+  "name": "s_Death",
   "tags": [],
   "resourceType": "GMSprite",
 }

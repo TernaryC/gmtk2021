@@ -9,7 +9,8 @@
     {"id":{"name":"ts_lab","path":"tilesets/ts_lab/ts_lab.yy",},"order":0,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
     {"id":{"name":"s_WallUp","path":"sprites/s_WallUp/s_WallUp.yy",},"order":5,},
-    {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":0,},
+    {"id":{"name":"s_Death","path":"sprites/s_Death/s_Death.yy",},"order":9,},
+    {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":4,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":6,},
     {"id":{"name":"s_Bot_Collision","path":"sprites/s_Bot_Collision/s_Bot_Collision.yy",},"order":4,},
     {"id":{"name":"tss_lab","path":"sprites/tss_lab/tss_lab.yy",},"order":1,},
@@ -51,9 +52,9 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
+    {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -79,7 +80,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.2.556",
+    "IDEVersion": "2.3.2.560",
   },
   "resourceVersion": "1.4",
   "name": "gmtk2021",

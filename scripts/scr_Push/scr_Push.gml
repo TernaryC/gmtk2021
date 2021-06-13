@@ -14,7 +14,7 @@ function scr_Push(){
 		}
 		xspd = xspd/2
 	}
-	if (place_meeting(x, y+yspd , o_Pushable)){
+	else if (place_meeting(x, y+yspd , o_Pushable)){
 		var block = instance_place(x,y+yspd,o_Pushable)
 		if y<block.y{
 			with(block){
@@ -25,7 +25,6 @@ function scr_Push(){
 		with(block){
 					scr_Move(0,-yspd)
 			}
-		
 		}
 		yspd = yspd/2
 	}

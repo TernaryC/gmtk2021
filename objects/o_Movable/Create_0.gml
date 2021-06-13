@@ -3,37 +3,34 @@
 event_inherited();
 baseX = x
 baseY = y
-
+xspd = 0
+yspd = 0
 additive = 1
 if isLeftOrdDown{
 	additive = -1
 }
 
 self.Move = function(MovableIDEntry) {
-	var xspd = 0 
-	var yspd = 0
-	
+	xspd = 0
+	yspd = 0
+
 	var moved = false;
 	if MovableId == MovableIDEntry {
 		if distanceMoved< distanceMax{
 				if (!isVerticle){
-					
-					xspd = additive 
-					
-					if (!place_meeting(x + xspd, y, o_Player)) {
-						scr_Move(xspd,0)
-						distanceMoved++;
-						moved = true;
-					}
+
+					xspd = additive
+					scr_Push()
+					scr_Move(xspd,0)
+					distanceMoved++;
+					moved = true;
 				}
 				else{
 					yspd = additive;
-					
-					if (!place_meeting(x, y + yspd, o_Player)) {
-						scr_Move(0,yspd)
-						distanceMoved++;
-						moved = true;
-					}
+					scr_Push()
+					scr_Move(0,yspd)
+					distanceMoved++;
+					moved = true;
 				}
 		}
 		if (moved) {
@@ -49,25 +46,21 @@ self.MoveBack = function (MovableIDEntry) {
 	var moved = false;
 	if MovableId == MovableIDEntry {
 		if (!isVerticle){
-			
-			if (baseX != x) {
-				if (!place_meeting(x - additive, y, o_Player)) {
-					x = x-additive;
-					xoff = -additive;
-					distanceMoved--;
-					moved = true;
-				}
+
+			if (distanceMoved >=0) {
+				x = x-additive;
+				xoff = -additive;
+				distanceMoved--;
+				moved = true;
 			}
 		}
 		else{
-			
-			if (baseY != y) {
-				if (!place_meeting(x, y - additive, o_Player)) {
-					y = y - additive;
-					yoff = -additive;
-					distanceMoved--;
-					moved = true
-				}
+
+			if (distanceMoved >=0) {
+				y = y - additive;
+				yoff = -additive;
+				distanceMoved--;
+				moved = true
 			}
 		}
 		if (moved) {
