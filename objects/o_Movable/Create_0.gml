@@ -103,3 +103,4 @@ self.checkAnchors = function (_x, _y) {
 		}
 	}
 }
+
