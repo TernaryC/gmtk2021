@@ -19,4 +19,4 @@ if (!global.paused) {
 	if (yspd != 0 and sign(yspd) != lasty) lasty = sign(yspd);
 }
 
-scr_Push()
+scr_Push(object_index)

@@ -24,7 +24,7 @@ self.Move = function(MovableIDEntry) {
 					xspd = additive 
 					
 					if (!place_meeting(x + xspd, y, o_Player)) {
-						scr_Move(xspd,0)
+						scr_Move(xspd,0,object_index)
 						distanceMoved++;
 						moved = true;
 					}
@@ -33,7 +33,7 @@ self.Move = function(MovableIDEntry) {
 					yspd = additive;
 					
 					if (!place_meeting(x, y + yspd, o_Player)) {
-						scr_Move(0,yspd)
+						scr_Move(0,yspd,object_index)
 						distanceMoved++;
 						moved = true;
 					}
@@ -48,7 +48,7 @@ self.Move = function(MovableIDEntry) {
 		} else {
 			if (audio_is_playing(sfx_moveBig_loop)) {
 				audio_stop_sound(sfx_moveBig_loop)
-				audio_play_sound(sfx_moveBig_end, 0.5, false);
+				if (!audio_is_playing(sfx_moveBig_end)) audio_play_sound(sfx_moveBig_end, 0.5, false);
 			}
 		}
 	}
@@ -88,22 +88,16 @@ self.MoveBack = function (MovableIDEntry) {
 		//because it wasn't working with just one.
 		//This, for some reason works, and so it shall stay.
 		
-		audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 		if (moved) {
-			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 			if (!audio_is_playing(sfx_moveBig_loop)) {
 				audio_play_sound(sfx_moveBig_loop, 0.5, true);
-				audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 			}
-			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 			adjustAnchors(xoff, yoff);
 			checkAnchors(x, y);
 		} else {
-			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
-			audio_sound_gain(sfx_moveBig_end, 0.5, 0);
 			if (audio_is_playing(sfx_moveBig_loop)) {
 				audio_stop_sound(sfx_moveBig_loop)
-				audio_play_sound(sfx_moveBig_end, 0.5, false);
+				if (!audio_is_playing(sfx_moveBig_end)) audio_play_sound(sfx_moveBig_end, 0.5, false);
 			}
 		}
 	}

@@ -19,6 +19,7 @@
     {"instances":[
         {"properties":[
             {"propertyId":{"name":"rope_length","path":"objects/o_rope_end/o_rope_end.yy",},"objectId":{"name":"o_rope_end","path":"objects/o_rope_end/o_rope_end.yy",},"value":"400","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"rope_length","path":"objects/o_rope_end/o_rope_end.yy",},"objectId":{"name":"o_rope_end","path":"objects/o_rope_end/o_rope_end.yy",},"value":"560","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.75,"scaleY":0.75,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":496.0,"y":544.0,"resourceVersion":"1.0","name":"inst_47E0A7AF","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"facing","path":"objects/o_rope_start/o_rope_start.yy",},"objectId":{"name":"o_rope_start","path":"objects/o_rope_start/o_rope_start.yy",},"value":"UP","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -75,7 +76,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,24,24,24,21,38,20,24,27,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,38,38,38,38,38,38,38,25,0,0,0,0,
 0,0,0,0,0,0,18,22,19,0,38,38,38,38,38,38,38,38,38,38,25,0,0,0,0,
-0,0,0,0,0,0,25,38,23,0,0,18,38,38,38,38,38,38,38,38,25,0,0,0,0,
+0,0,0,0,0,0,25,38,23,0,0,0,38,38,38,38,38,38,38,38,25,0,0,0,0,
 0,0,0,0,0,0,20,24,21,0,0,0,38,38,38,38,38,38,38,38,25,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,38,38,38,38,38,38,38,38,25,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,38,38,38,38,38,38,38,38,25,0,0,0,0,

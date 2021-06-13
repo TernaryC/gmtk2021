@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 1.0,
+  "volume": 0.44,
   "preload": false,
   "bitRate": 512,
   "sampleRate": 48000,
