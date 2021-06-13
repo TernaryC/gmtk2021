@@ -35,7 +35,7 @@ self.move = function (distance, angle, force) {
 
 self.getSnag = function (i) {
     /// Get sign value of anchor
-    print("\nSIGN", i, "at", frames)
+    // DEBUG: print("\nSIGN", i, "at", frames)
 
     //ignore indexes that are out of bounds
     if (i + 1 > anchors_len - 1) return 0;
@@ -43,32 +43,32 @@ self.getSnag = function (i) {
 
     //a is the angle of the next anchor in the list
     var a = anchors[| i + 1].angle;
-    print("a:",a)
+    // DEBUG: print("a:",a)
 
     //returns the sign (+/-) of the difference between
     // the current anchor's angle and the next anchor's angle
     // (this is important for determining if an anchor needs to be
     //  removed from the list due to being unsnagged.)
-    print("sign:",sign(anchors[| i].angle - a))
+    // DEBUG: print("sign:",sign(anchors[| i].angle - a))
     return sign(anchors[| i].angle - a);
 }
 
 self.recordSnags = function (i) {
     /// Check for unsnagging along rope
     ///  from anchor[i - 1] to anchor[i]
-	print("\nUNSNAG", i, "at", frames)
+	// DEBUG: print("\nUNSNAG", i, "at", frames)
 
     var s = i - 1 > 0 ? i - 1 : 0;
     //s is the first index of the anchors list to check
     // usually it is the previous anchor, but if there isn't
     // one, it defaults to the first anchor
-	print("s:",s)
+	// DEBUG: print("s:",s)
 
     for (var j = s; j < i; j++) {
-    	print("j:",j)
+    	// DEBUG: print("j:",j)
         var dir = getSnag(j); //sign value of anchor j
         var old = anchors[| j].dir; //last calculated sign value of j
-		print("dir, old:",dir,old)
+		// DEBUG: print("dir, old:",dir,old)
 
         //if j has not been given a sign value, set it to the
         // newly calculated one (dir)
@@ -78,7 +78,7 @@ self.recordSnags = function (i) {
             //if j's sign value has changed since it's creation,
             // it needs to be unsnagged and removed
             if (dir != old) {
-            	print("unsnagging")
+            	// DEBUG: print("unsnagging")
             	audio_play_sound(sfx_unsnag, 1, false);
                 removeAnchor(j);
             }
@@ -92,7 +92,7 @@ self.location = function (i) {
 
 self.adjustAnchor = function (i, newpos) {
     /// Move an anchor
-    print("\nADJUST", i, "to", newpos, "at", frames)
+    // DEBUG: print("\nADJUST", i, "to", newpos, "at", frames)
 
     //by default, check to see if this overextends the rope
     //checkExtend ??= true
@@ -106,11 +106,11 @@ self.adjustAnchor = function (i, newpos) {
     // (this won't always solve it realistically, but it's better than nothing.
     //  especially since this is an edge case anyway)
     if (getLength() >= rope_length and !global.superrope) {
-    	print("extended")
+    	// DEBUG: print("extended")
         var over_rope = getLength() - rope_length;
-        print("over_rope:",over_rope)
+        // DEBUG: print("over_rope:",over_rope)
         var me = anchors[| anchors_len - 1];
-        print("me:",me)
+        // DEBUG: print("me:",me)
         move(over_rope, me.angle + pi, true);
     }
 
@@ -134,22 +134,22 @@ self.adjustAnchor = function (i, newpos) {
 self.findSnags = function (i) {
     /// Check along rope for collisions
     ///  from anchor[i - 1] to anchor[i]
-	print("\nSNAG", i, "at", frames)
+	// DEBUG: print("\nSNAG", i, "at", frames)
 
     if (i > 0 and i < anchors_len) {
 
         var anchor = anchors[| i];
         var anchor_prev = anchors[| i - 1];
-		print("anchor:",anchor)
-		print("anchor_prev:",anchor_prev)
+		// DEBUG: print("anchor:",anchor)
+		// DEBUG: print("anchor_prev:",anchor_prev)
 
         //length of rope between both anchors
         var length = pos_distance(anchor_prev, anchor);
-        print("length:",length)
+        // DEBUG: print("length:",length)
 
         //angle of rope from anchor_prev to anchor
         var angle = anchor.angle;
-        print("angle:",angle)
+        // DEBUG: print("angle:",angle)
 
         //var check = collision_line(anchor_prev.x, anchor_prev.y, anchor.x, anchor.y, o_rope_block, true, true);
         //if (check == noone) return;
@@ -164,13 +164,13 @@ self.findSnags = function (i) {
 
             if (b != noone and b.object_index != o_Pushable) {
                 // Collision found
-				print("snagged")
+				// DEBUG: print("snagged")
 				
                 //get coordinates of corner that rope should hook onto
                 var cpos = b.getCorner(v);
-				print("b:",b)
-				print("v:",v)
-				print("cpos:",cpos)
+				// DEBUG: print("b:",b)
+				// DEBUG: print("v:",v)
+				// DEBUG: print("cpos:",cpos)
 				
 				//Don't add if it's basically the previous point
 				if (pos_distance(cpos, anchor_prev) <= 0.1) break
@@ -186,7 +186,7 @@ self.findSnags = function (i) {
 
 self.removeAnchor = function (i) {
     /// Remove an anchor from the list
-    print("\nREMOVE", i, "at", frames)
+    // DEBUG: print("\nREMOVE", i, "at", frames)
 
     //if it's not in the list, then don't bother
     if (i >= anchors_len || i < 0) return;
@@ -194,7 +194,7 @@ self.removeAnchor = function (i) {
     //delete anchor from list
     ds_list_delete(anchors, i);
     anchors_len--;
-	print("anchors_len:",anchors_len)
+	// DEBUG: print("anchors_len:",anchors_len)
 
     //update the angle of the previous and next anchor
     // (if they exist)
@@ -204,7 +204,7 @@ self.removeAnchor = function (i) {
 
 self.addAnchor = function (i, _pos, _angle, _parent) {
     /// Add a new anchor to the list
-	print("\nADD", i, "on", _pos, "to", _angle, "from", _parent, "at", frames)
+	// DEBUG: print("\nADD", i, "on", _pos, "to", _angle, "from", _parent, "at", frames)
 
     // New anchor object
     var anchor = {
@@ -218,7 +218,7 @@ self.addAnchor = function (i, _pos, _angle, _parent) {
     //Add new anchor to list
     ds_list_insert(anchors, i, anchor);
     anchors_len++;
-    print("anchors_len:",anchors_len)
+    // DEBUG: print("anchors_len:",anchors_len)
 
     //Update the angle of the next anchor in the list
     if (i < anchors_len - 1) realignAnchor(i + 1);
@@ -226,13 +226,13 @@ self.addAnchor = function (i, _pos, _angle, _parent) {
 
 self.realignAnchor = function (i) {
     /// Update anchor[i]'s angle
-    print("\nREALIGN", i, "at", frames)
+    // DEBUG: print("\nREALIGN", i, "at", frames)
 
     //don't bother if it doesn't have a previous or next anchor
     if (i - 1 < 0 or i >= anchors_len) return;
 
     var oldangle = anchors[| i].angle; //previous angle
-	print("oldangle:", oldangle)
+	// DEBUG: print("oldangle:", oldangle)
 
     //potential new angles
     var newangles = [0, 0, 0];
@@ -243,7 +243,7 @@ self.realignAnchor = function (i) {
     //  current one
     // newangles[1] and [2] are the same angle but +/- two_pi
     //  This is important to prevent the pi boundry (see below)
-	print("newangles:", newangles)
+	// DEBUG: print("newangles:", newangles)
 
     /* Find the angle closest to the old angle, and use that one */
 
@@ -266,8 +266,8 @@ self.realignAnchor = function (i) {
             record = test;
         }
     }
-    print("least:",least)
-    print("record:",record)
+    // DEBUG: print("least:",least)
+    // DEBUG: print("record:",record)
 
     //This whole mess of finding the closest angle to the current
     // one is to prevent the pi boundry, which causes the rope

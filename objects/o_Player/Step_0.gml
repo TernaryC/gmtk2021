@@ -3,8 +3,12 @@
 if (!instance_exists(o_Tester)) {
 	instance_create_layer(0, 0, "Player_and_Rope", o_Tester);
 }
+if (!instance_exists(o_Menu)) {
+	instance_create_layer(0, 0, "Player_and_Rope", o_Menu);
+}
 
 event_inherited();
+
 xspd = (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * walkSpd;
 yspd = (keyboard_check(ord("S")) - keyboard_check(ord("W"))) * walkSpd;
 
