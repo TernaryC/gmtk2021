@@ -1,0 +1,38 @@
+|'~-------------------------~'|
+| * Level Design Guidelines * |
+|.~-------------------------~.|
+
+Each level should consist of 5 layers.
+Those layers, and what they must include, are, in order:
+
+Instance: Player_and_Rope
+	- Contains the o_Player object and the o_rope_start object
+	- These must be on top so the player and rope are always drawn above everything else
+	
+Instance: Wall_Objects
+	- Contains the o_Wall objects that make up the level geometry
+	! DO NOT PLACE MULTIPLE o_Wall OBJECTS NEXT TO ONE ANOTHER !
+		- Instead, stretch a single o_Wall object to take up the entirety of a surface
+		- Place multiple o_Wall objects side-by-side causes errors in the rope
+	- When placing walls, make sure they are one 16x tile *shorter* from the bottom of
+		the wall texture (in the following layer).
+		This is so that ropes wrap around the sides of walls and not the bottom,
+		and so the player correctly appears to collide with them.
+	- Also contains o_Bottomless objects
+
+Tileset: Walls
+	- Contains the walls of the level made using the ts_lab tileset
+	- Make use of the Brushes tab to place walls easily.
+	- Make sure wall tops reach the edges of the screen! No empty space!
+
+Instance: Game_Objects
+	- Contains the rest of the objects that make the game work
+		(including o_Moveable, o_Switch, o_deathPit, etc)
+	- Like walls, make sure that o_Moveable and o_Pushable objects are one 16x tile shorter
+		than they should be.
+
+Tileset: Ground
+	- Contains the ground tiles of the level made using the ts_lab tileset
+	- Make use of the floor_tiling Auto Tile in the Libraries tab for drawing the floor.
+	- Make use of the Brushes tab to place the sides of bottomless pits easily.
+	- Make use of the Animated water textures in the Libraries tab to place water
