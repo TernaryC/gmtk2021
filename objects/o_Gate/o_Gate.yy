@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "s_WallUp",
-    "path": "sprites/s_WallUp/s_WallUp.yy",
+    "name": "Sprite23",
+    "path": "sprites/Sprite23/Sprite23.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "o_Movable",
-    "path": "objects/o_Movable/o_Movable.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,20 +21,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Room Objects",
+    "path": "folders/Objects/Room Objects.yy",
   },
   "resourceVersion": "1.0",
-<<<<<<< HEAD:objects/Gate/Gate.yy
-  "name": "Gate",
-=======
-  "name": "o_rope_start",
->>>>>>> jenni-what:objects/o_rope_end/o_rope_start.yy
+  "name": "o_Gate",
   "tags": [],
   "resourceType": "GMObject",
 }
