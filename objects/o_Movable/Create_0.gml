@@ -16,6 +16,7 @@ self.Move = function(MovableIDEntry) {
 	var yspd = 0
 	
 	var moved = false;
+	if (global.paused) return;
 	if MovableId == MovableIDEntry {
 		if distanceMoved< distanceMax{
 				if (!isVerticle){
@@ -54,6 +55,7 @@ self.Move = function(MovableIDEntry) {
 }
 
 self.MoveBack = function (MovableIDEntry) {
+	if (global.paused) return;
 	var xoff = 0;
 	var yoff = 0;
 	var moved = false;
