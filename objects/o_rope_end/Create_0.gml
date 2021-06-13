@@ -69,6 +69,7 @@ self.recordSnags = function (i) {
             //if j's sign value has changed since it's creation,
             // it needs to be unsnagged and removed
             if (dir != old) {
+            	audio_play_sound(sfx_unsnag, 1, false);
                 removeAnchor(j);
             }
         }
@@ -149,6 +150,7 @@ self.findSnags = function (i) {
                 var cpos = b.getCorner(v);
 
                 //add new anchor at collision
+                audio_play_sound(sfx_snag, 1, false);
                 addAnchor(i, cpos, angle, b);
                 break;
             }
@@ -189,7 +191,7 @@ self.addAnchor = function (i, _pos, _angle, _parent) {
     anchors_len++;
 
     //Update the angle of the next anchor in the list
-    if (i <= anchors_len - 1) realignAnchor(i + 1);
+    if (i < anchors_len - 1) realignAnchor(i + 1);
 }
 
 self.realignAnchor = function (i) {
@@ -271,8 +273,8 @@ var rs = instance_find(o_rope_start, 0);
 anchors_len = 0; //length of anchors list
 
 // Create first and last anchors
-addAnchor(0, pos(x, y), 0, o_rope_start);
-addAnchor(1, pos(rs.x, rs.y), 0, o_rope_end);
+addAnchor(0, pos(rs.x, rs.y), 0, o_rope_start);
+addAnchor(1, pos(x, y), 0, o_rope_end);
 global.anchors = anchors
 global.anchorsLen = anchors_len
 //the first anchor is always the o_rope_start object

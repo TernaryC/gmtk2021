@@ -26,3 +26,6 @@ if (keyboard_check(ord("R"))) {room_restart();
 
 global.anchors = anchors
 global.anchorsLen = anchors_len
+
+depth = map(y, 0, room_height, 100, 0);
+

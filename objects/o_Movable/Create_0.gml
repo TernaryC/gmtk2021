@@ -37,8 +37,16 @@ self.Move = function(MovableIDEntry) {
 				}
 		}
 		if (moved) {
+			if (!audio_is_playing(sfx_moveBig_loop)) {
+				audio_play_sound(sfx_moveBig_loop, 0.5, true);
+			}
 			adjustAnchors(xspd, yspd);
 			checkAnchors(x, y);
+		} else {
+			if (audio_is_playing(sfx_moveBig_loop)) {
+				audio_stop_sound(sfx_moveBig_loop)
+				audio_play_sound(sfx_moveBig_end, 0.5, false);
+			}
 		}
 	}
 }
@@ -70,9 +78,29 @@ self.MoveBack = function (MovableIDEntry) {
 				}
 			}
 		}
+		
+		//I basically spammed audio_sound_gain calls here
+		// (for the sfx_moveBig_loop sound)
+		//because it wasn't working with just one.
+		//This, for some reason works, and so it shall stay.
+		
+		audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 		if (moved) {
+			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
+			if (!audio_is_playing(sfx_moveBig_loop)) {
+				audio_play_sound(sfx_moveBig_loop, 0.5, true);
+				audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
+			}
+			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
 			adjustAnchors(xoff, yoff);
 			checkAnchors(x, y);
+		} else {
+			audio_sound_gain(sfx_moveBig_loop, 0.5, 0);
+			audio_sound_gain(sfx_moveBig_end, 0.5, 0);
+			if (audio_is_playing(sfx_moveBig_loop)) {
+				audio_stop_sound(sfx_moveBig_loop)
+				audio_play_sound(sfx_moveBig_end, 0.5, false);
+			}
 		}
 	}
 }
