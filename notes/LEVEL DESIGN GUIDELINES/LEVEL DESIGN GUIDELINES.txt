@@ -9,6 +9,11 @@ Instance: Player_and_Rope
 	- Contains the o_Player object and the o_rope_start object
 	- These must be on top so the player and rope are always drawn above everything else
 	
+Tileset: Walls
+	- Contains the walls of the level made using the ts_lab tileset
+	- Make use of the Brushes tab to place walls easily.
+	- Make sure wall tops reach the edges of the screen! No empty space!
+	
 Instance: Wall_Objects
 	- Contains the o_Wall objects that make up the level geometry
 	! DO NOT PLACE MULTIPLE o_Wall OBJECTS NEXT TO ONE ANOTHER !
@@ -20,14 +25,10 @@ Instance: Wall_Objects
 		and so the player correctly appears to collide with them.
 	- Also contains o_Bottomless objects
 
-Tileset: Walls
-	- Contains the walls of the level made using the ts_lab tileset
-	- Make use of the Brushes tab to place walls easily.
-	- Make sure wall tops reach the edges of the screen! No empty space!
-
 Instance: Game_Objects
 	- Contains the rest of the objects that make the game work
 		(including o_Moveable, o_Switch, o_deathPit, etc)
+	! MAKE SURE THAT ALL BLOCKS (o_Moveable, o_Pushable) HAVE A WIDTH DIVISIBLE BY 32 !
 	- Like walls, make sure that o_Moveable and o_Pushable objects are one 16x tile shorter
 		than they should be.
 
