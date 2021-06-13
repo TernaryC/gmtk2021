@@ -1,4 +1,4 @@
-//frames++;
+frames++;
 
 //for some reason this is important in order to get the rope
 // working when the game begins. It's not strictly neccessary,
