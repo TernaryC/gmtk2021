@@ -13,6 +13,7 @@
     {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":4,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":6,},
     {"id":{"name":"s_Bot_Collision","path":"sprites/s_Bot_Collision/s_Bot_Collision.yy",},"order":4,},
+    {"id":{"name":"testRoom","path":"rooms/testRoom/testRoom.yy",},"order":3,},
     {"id":{"name":"tss_lab","path":"sprites/tss_lab/tss_lab.yy",},"order":1,},
     {"id":{"name":"s_Bot_DL","path":"sprites/s_Bot_DL/s_Bot_DL.yy",},"order":0,},
     {"id":{"name":"s_Movable","path":"sprites/s_Movable/s_Movable.yy",},"order":2,},
@@ -52,9 +53,10 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"testRoom","path":"rooms/testRoom/testRoom.yy",},},
+    {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

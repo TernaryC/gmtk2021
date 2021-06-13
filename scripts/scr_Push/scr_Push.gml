@@ -12,7 +12,7 @@ function scr_Push(){
 					scr_Move(-xspd,0)
 			}	
 		}
-		xspd = xspd/2
+		//xspd = xspd/2
 	}
 	else if (place_meeting(x, y+yspd , o_Pushable)){
 		var block = instance_place(x,y+yspd,o_Pushable)
@@ -26,6 +26,6 @@ function scr_Push(){
 					scr_Move(0,-yspd)
 			}
 		}
-		yspd = yspd/2
+		//yspd = yspd/2
 	}
 }

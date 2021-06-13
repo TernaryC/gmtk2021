@@ -5,9 +5,9 @@ baseX = x
 baseY = y
 xspd = 0
 yspd = 0
-additive = 1
+additive = 2
 if isLeftOrdDown{
-	additive = -1
+	additive = -2
 }
 
 self.Move = function(MovableIDEntry) {
@@ -22,7 +22,7 @@ self.Move = function(MovableIDEntry) {
 					if (!place_meeting(x + xspd, y, o_Player)) {
 						scr_Push()
 						scr_Move(xspd,0)
-						distanceMoved++;
+						distanceMoved += 2;
 						moved = true;
 					}
 				} else {
@@ -30,7 +30,7 @@ self.Move = function(MovableIDEntry) {
 					if (!place_meeting(x, y + yspd, o_Player)) {
 						scr_Push()
 						scr_Move(0,yspd)
-						distanceMoved++;
+						distanceMoved += 2;
 						moved = true;
 					}
 				}
@@ -52,7 +52,7 @@ self.MoveBack = function (MovableIDEntry) {
 				if (!place_meeting(x - additive, y, o_Player)) {
 					x = x-additive;
 					xoff = -additive;
-					distanceMoved--;
+					distanceMoved -= 2;
 					moved = true;
 				}
 			}
@@ -62,7 +62,7 @@ self.MoveBack = function (MovableIDEntry) {
 				if (!place_meeting(x, y - additive, o_Player)) {
 					y = y - additive;
 					yoff = -additive;
-					distanceMoved--;
+					distanceMoved -= 2;
 					moved = true
 				}
 			}
