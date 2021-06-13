@@ -1,3 +1,5 @@
 /// @description put this object sligtly smaller then the visual
-room_speedl = room_speedl+1
-alarm[0] = 5*room_speedl
+o_Player.sprite_index =s_Death
+if (alarm[0] < 0) {
+  alarm[0] = 60;
+}

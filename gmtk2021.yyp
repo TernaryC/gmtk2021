@@ -8,6 +8,7 @@
     {"id":{"name":"ts_lab","path":"tilesets/ts_lab/ts_lab.yy",},"order":0,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
     {"id":{"name":"s_WallUp","path":"sprites/s_WallUp/s_WallUp.yy",},"order":5,},
+    {"id":{"name":"s_Death","path":"sprites/s_Death/s_Death.yy",},"order":9,},
     {"id":{"name":"o_Button","path":"objects/o_Button/o_Button.yy",},"order":4,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":6,},
     {"id":{"name":"tss_lab","path":"sprites/tss_lab/tss_lab.yy",},"order":1,},
