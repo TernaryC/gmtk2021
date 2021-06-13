@@ -11,7 +11,7 @@ function scr_Move(xspd, yspd){
 				print("BUTTS2")
 			}
 		}
-		*/
+		
 		if place_meeting(x+xspd,y,o_Wall) and !o_Wall.isDown{
 			while(!place_meeting(x+sign(xspd),y,o_Wall)){
 				x= x+sign(xspd)

@@ -22,7 +22,17 @@ self.move = function (distance, angle) {
             // new position
             adjustAnchor(anchors_len - 1, pos(x, y));
         } else {
+			
+			if( (getLength(anchors_len - 1, pos(v.x, y)) < rope_length)){
+				scr_Move(v.x-x, 0)
+			}
+			else if( (getLength(anchors_len - 1, pos(x, v.y)) < rope_length)){
+				scr_Move(0, v.y-y)
+			
+			
+			
             break;
+			}
         }
     }
 }
