@@ -85,12 +85,34 @@ self.location = function (i) {
 	return pos(anchors[| i].x, anchors[| i].y)
 }
 
-self.adjustAnchor = function (i, newpos) {
+self.adjustAnchor = function (i, newpos, checkExtend) {
     /// Move an anchor
+
+    //by default, check to see if this overextends the rope
+    if (checkExtend == undefined) checkExtend = true
 
     //reposition anchor to new position
     anchors[| i].x = newpos.x;
     anchors[| i].y = newpos.y;
+    
+    //check if that overextended the rope
+    // if it did, move all the following anchors along their rope lengths
+    // by equal amounts
+    if (checkExtend and getLength() >= rope_length) {
+        print("Overextended");
+        var anchors_to_move = anchors_len - i;
+        var over_rope = getLength() - rope_length;
+        var shorten = over_rope / anchors_to_move;
+        print(over_rope,"/",anchors_to_move,"=",shorten);
+        for (var j = i; j < anchors_len; j++) {
+            print("Adjusting", j)
+            var anchor = anchors[| j]
+            print(anchor)
+            var npos = vector(anchor, anchor.angle, -shorten);
+            print(npos)
+            adjustAnchor(j, npos, false);
+        }
+    }
 
     //update anchor angle
     realignAnchor(i);
@@ -106,6 +128,7 @@ self.adjustAnchor = function (i, newpos) {
 
     //check for unsnagging along previous and next rope section
     recordSnags(i);
+    if (i < anchors_len - 1) recordSnags(i + 1);
 }
 
 self.findSnags = function (i) {
@@ -241,6 +264,11 @@ self.getLength = function (ai, testpos) {
     /// Return length of rope if an anchor was to move to the position
     ///  testpos. This is important for figuring out if a movement of
     ///  an anchor will overextend the rope.
+
+    /// NOTE: If you call this function without any arguments, it
+    ///  still works fine. You just get the actual current length
+    ///  of the rope. It'll make Game Maker scream at you but it will
+    ///  be okay I promise.
 
     var length = 0;
     for (var i = 0; i < anchors_len - 1; i++) {
