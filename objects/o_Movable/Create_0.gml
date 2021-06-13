@@ -13,6 +13,7 @@ self.Move = function(MovableIDEntry) {
 	var xspd = 0 
 	var yspd = 0
 	
+	var moved = false;
 	if MovableId == MovableIDEntry {
 		if distanceMoved< distanceMax{
 				if (!isVerticle){
@@ -21,21 +22,25 @@ self.Move = function(MovableIDEntry) {
 					
 					scr_Move(xspd,0)
 					distanceMoved++;
+					moved = true;
 				}
 				else{
 					yspd = additive;
 					
 					scr_Move(0,yspd)
 					distanceMoved++;
+					moved = true;
 				}
 		}
 		adjustAnchors(xspd, yspd);
+		if (moved) checkAnchors(x, y);
 	}
 }
 
 self.MoveBack = function (MovableIDEntry) {
 	var xoff = 0;
 	var yoff = 0;
+	var moved = false;
 	if MovableId == MovableIDEntry {
 		if (!isVerticle){
 			
@@ -43,6 +48,7 @@ self.MoveBack = function (MovableIDEntry) {
 				x = x-additive;
 				xoff = -additive;
 				distanceMoved--;
+				moved = true;
 			}
 		}
 		else{
@@ -51,23 +57,40 @@ self.MoveBack = function (MovableIDEntry) {
 				y = y - additive;
 				yoff = -additive;
 				distanceMoved--;
+				moved = true
 			}
 		}
 		adjustAnchors(xoff, yoff);
+		if (moved) checkAnchors(x, y);
 	}
 }
 
 self.adjustAnchors = function (xoff, yoff) {
 	//print("adjusting")
 	var re = instance_find(o_rope_end, 0);
-	//print(re)
-	for (var i = 0; i < global.anchorsLen - 1; i++) {
-		//print(i)
-		var anchor = global.anchors[| i];
-		//print(anchor.parent)
-		//print(self)
-		if (anchor.parent == self.id) {
-			re.adjustAnchor(i, pos(anchor.x + xoff, anchor.y + yoff));
+	if (re != undefined) {
+		//print(re)
+		for (var i = 0; i < re.anchors_len - 1; i++) {
+			//print(i)
+			var anchor = re.anchors[| i];
+			//print(anchor.parent)
+			//print(self)
+			if (anchor.parent == self.id) {
+				re.adjustAnchor(i, pos(anchor.x + xoff, anchor.y + yoff));
+			}
+		}
+	}
+}
+
+self.checkAnchors = function (_x, _y) {
+	var re = instance_find(o_rope_end, 0);
+	if (re != undefined) {
+		for (var i = 0; i < re.anchors_len - 1; i++) {
+			var anchor = re.anchors[| i];
+			var next = re.anchors[| i + 1];
+			if (collision_line(anchor.x, anchor.y, next.x, next.y, self, false, false)) {
+				re.adjustAnchor(i, re.location(i))
+			}
 		}
 	}
 }

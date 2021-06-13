@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Bullshit",
-    "path": "folders/Sprites/Bullshit.yy",
+    "path": "folders/Sprites/Placeholder/Bullshit.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_WallUp",

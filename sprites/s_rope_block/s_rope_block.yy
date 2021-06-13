@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Placeholder",
+    "path": "folders/Sprites/Placeholder.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_rope_block",

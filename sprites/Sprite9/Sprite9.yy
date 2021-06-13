@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "gmtk2021",
-    "path": "gmtk2021.yyp",
+    "name": "Bullshit",
+    "path": "folders/Sprites/Placeholder/Bullshit.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite9",

@@ -5,7 +5,8 @@
 // I don't think, but it helps with the edge case of things
 // interacting with the rope before the player has moved at all.
 if (!init) {
-    adjustAnchor(anchors_len - 1, anchors[| anchors_len - 1]);
+    move( 5, 5);
+    move( 5,-5);
     init = true;
 }
 
