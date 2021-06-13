@@ -9,6 +9,7 @@
     {"id":{"name":"s_Switch","path":"sprites/s_Switch/s_Switch.yy",},"order":3,},
     {"id":{"name":"s_Player","path":"sprites/s_Player/s_Player.yy",},"order":0,},
     {"id":{"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},"order":4,},
+    {"id":{"name":"ARoomWithAView","path":"rooms/ARoomWithAView/ARoomWithAView.yy",},"order":4,},
     {"id":{"name":"ts_lab","path":"tilesets/ts_lab/ts_lab.yy",},"order":0,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
     {"id":{"name":"s_WallUp","path":"sprites/s_WallUp/s_WallUp.yy",},"order":5,},
@@ -80,6 +81,7 @@
         {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
       ],},
     {"roomId":{"name":"Room_Template","path":"rooms/Room_Template/Room_Template.yy",},},
+    {"roomId":{"name":"ARoomWithAView","path":"rooms/ARoomWithAView/ARoomWithAView.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -106,7 +108,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.2.556",
+    "IDEVersion": "2.3.2.560",
   },
   "resourceVersion": "1.4",
   "name": "gmtk2021",

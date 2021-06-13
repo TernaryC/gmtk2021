@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Move(xspd, yspd){
-	if !global.paused{
+	if !global.Dead{
 		var block = instance_place(x+xspd,y,o_Wall)
 		var re = instance_find(o_rope_end, 0)
 		for (var i = 0; i < re.anchors_len - 1; i++) {
