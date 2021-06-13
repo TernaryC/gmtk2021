@@ -10,14 +10,14 @@ for (var i = 0; i < instance_number(o_Pushable); i++) {
 	}
 }
 
-if (place_meeting(x,y,o_Player) or box) {
+if (place_meeting(x,y,o_Player) or box or (switched and permanent)) {
 	if (!switched) audio_play_sound(sfx_press, 1, false);
 	switched = true;
 	for (var i = 0; i < instance_number(o_Movable); i++) {
 		var block = instance_find(o_Movable, i);
 		block.Move(controls)
 	}
-} else {
+} else if (!permanent) {
 	if (switched) audio_play_sound(sfx_unpress, 1, false);
 	switched = false;
 	for (var i = 0; i < instance_number(o_Movable); i++) {

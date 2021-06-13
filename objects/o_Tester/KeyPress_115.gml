@@ -1,0 +1,1 @@
+global.lockout = !global.lockout

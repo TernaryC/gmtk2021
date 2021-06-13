@@ -4,8 +4,10 @@ event_inherited();
 baseX = x
 baseY = y
 
+distanceMoved = 0;
+
 additive = 1
-if isLeftOrdDown{
+if isLeftOrUp{
 	additive = -1
 }
 
