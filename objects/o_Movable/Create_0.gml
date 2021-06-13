@@ -60,14 +60,16 @@ self.MoveBack = function (MovableIDEntry) {
 self.adjustAnchors = function (xoff, yoff) {
 	//print("adjusting")
 	var re = instance_find(o_rope_end, 0);
-	//print(re)
-	for (var i = 0; i < global.anchorsLen - 1; i++) {
-		//print(i)
-		var anchor = global.anchors[| i];
-		//print(anchor.parent)
-		//print(self)
-		if (anchor.parent == self.id) {
-			re.adjustAnchor(i, pos(anchor.x + xoff, anchor.y + yoff));
+	if (re != undefined) {
+		//print(re)
+		for (var i = 0; i < re.anchors_len - 1; i++) {
+			//print(i)
+			var anchor = re.anchors[| i];
+			//print(anchor.parent)
+			//print(self)
+			if (anchor.parent == self.id) {
+				re.adjustAnchor(i, pos(anchor.x + xoff, anchor.y + yoff));
+			}
 		}
 	}
 }

@@ -1,7 +1,10 @@
 //frames = 0; // counter of how many frames have passed since the game began
 
-self.move = function (distance, angle) {
+self.move = function (distance, angle, force) {
     /// Move player
+    
+    //default forced movement to false
+    if (force == undefined) force = false;
 
     //movement is done pixel by pixel. This is because even a
     // single pixel of movement can cause the rope to snag or
@@ -13,7 +16,8 @@ self.move = function (distance, angle) {
         var v = vector(pos(x, y), angle, 1);
 
         //don't move if the rope would extend past it's length
-        if (getLength(anchors_len - 1, pos(v.x, v.y)) < rope_length) {
+        // (ignore that check if this movement is forced)
+        if (force || getLength(anchors_len - 1, pos(v.x, v.y)) < rope_length) {
     		//converts your movement system to my movement system
     		//which will check for collisions
     		scr_Move(v.x-x, v.y-y)
@@ -75,33 +79,24 @@ self.location = function (i) {
 	return pos(anchors[| i].x, anchors[| i].y)
 }
 
-self.adjustAnchor = function (i, newpos, checkExtend) {
+self.adjustAnchor = function (i, newpos) {
     /// Move an anchor
 
     //by default, check to see if this overextends the rope
-    if (checkExtend == undefined) checkExtend = true
+    //checkExtend ??= true
 
     //reposition anchor to new position
     anchors[| i].x = newpos.x;
     anchors[| i].y = newpos.y;
     
     //check if that overextended the rope
-    // if it did, move all the following anchors along their rope lengths
-    // by equal amounts
-    if (checkExtend and getLength() >= rope_length) {
-        print("Overextended");
-        var anchors_to_move = anchors_len - i;
+    // if it did, move the end of the rope backwards that amount
+    // (this won't always solve it realistically, but it's better than nothing.
+    //  especially since this is an edge case anyway)
+    if (getLength() >= rope_length) {
         var over_rope = getLength() - rope_length;
-        var shorten = over_rope / anchors_to_move;
-        print(over_rope,"/",anchors_to_move,"=",shorten);
-        for (var j = i; j < anchors_len; j++) {
-            print("Adjusting", j)
-            var anchor = anchors[| j]
-            print(anchor)
-            var npos = vector(anchor, anchor.angle, -shorten);
-            print(npos)
-            adjustAnchor(j, npos, false);
-        }
+        var me = anchors[| anchors_len - 1];
+        move(over_rope, me.angle + pi, true);
     }
 
     //update anchor angle
@@ -125,7 +120,7 @@ self.findSnags = function (i) {
     /// Check along rope for collisions
     ///  from anchor[i - 1] to anchor[i]
 
-    if (i > 0) {
+    if (i > 0 and i < anchors_len) {
 
         var anchor = anchors[| i];
         var anchor_prev = anchors[| i - 1];
