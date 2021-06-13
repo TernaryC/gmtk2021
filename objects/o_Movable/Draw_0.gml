@@ -1,6 +1,6 @@
 //draw_self()
 
-depth = map(y, 0, room_height, 400, 300);
+depth = map(y, 0, room_height, 399, 300);
 
 var left = x - sprite_width / 2;
 var top  = y - sprite_height / 2;
