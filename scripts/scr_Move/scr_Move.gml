@@ -3,11 +3,11 @@
 function scr_Move(xspd, yspd){
 	if !global.paused{
 		var block = instance_place(x+xspd,y,o_Wall)
-		
-		for (var i = 0; i < global.anchorsLen - 1; i++) {
+		var re = instance_find(o_rope_end, 0)
+		for (var i = 0; i < re.anchors_len - 1; i++) {
 			//print("BUTTS")
-			var block = instance_find(global.anchors, i);
-			if place_meeting(global.anchors[| i].x,global.anchors[| i].y,o_Movable){
+			var block = instance_find(re.anchors, i);
+			if place_meeting(re.anchors[| i].x, re.anchors[| i].y, o_Movable){
 				//print("BUTTS2")
 			}
 		}
