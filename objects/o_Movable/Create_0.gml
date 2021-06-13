@@ -58,14 +58,14 @@ self.MoveBack = function (MovableIDEntry) {
 }
 
 self.adjustAnchors = function (xoff, yoff) {
-	print("adjusting")
+	//print("adjusting")
 	var re = instance_find(o_rope_end, 0);
-	print(re)
+	//print(re)
 	for (var i = 0; i < global.anchorsLen - 1; i++) {
-		print(i)
+		//print(i)
 		var anchor = global.anchors[| i];
-		print(anchor.parent)
-		print(self)
+		//print(anchor.parent)
+		//print(self)
 		if (anchor.parent == self.id) {
 			re.adjustAnchor(i, pos(anchor.x + xoff, anchor.y + yoff));
 		}
