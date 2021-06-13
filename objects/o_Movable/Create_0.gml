@@ -3,15 +3,16 @@
 event_inherited();
 baseX = x
 baseY = y
-
+xspd = 0 
+yspd = 0
 additive = 1
 if isLeftOrdDown{
 	additive = -1
 }
 
 self.Move = function(MovableIDEntry) {
-	var xspd = 0 
-	var yspd = 0
+	xspd = 0 
+	yspd = 0
 	
 	var moved = false;
 	if MovableId == MovableIDEntry {
@@ -19,14 +20,14 @@ self.Move = function(MovableIDEntry) {
 				if (!isVerticle){
 					
 					xspd = additive 
-					
+					scr_Push()
 					scr_Move(xspd,0)
 					distanceMoved++;
 					moved = true;
 				}
 				else{
 					yspd = additive;
-					
+					scr_Push()
 					scr_Move(0,yspd)
 					distanceMoved++;
 					moved = true;
