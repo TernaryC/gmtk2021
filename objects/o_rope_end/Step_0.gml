@@ -23,7 +23,7 @@ if (keyboard_check(ord("S"))) move( 5, DOWN);
 if (keyboard_check(ord("D"))) move( 5, RIGHT);
 
 if (keyboard_check(ord("R"))) room_restart();
-if (keyboard_check(vk_escape)) global.paused = !global.paused;
+if (keyboard_check(ord("Q"))) global.paused = !global.paused;
 
 global.anchors = anchors
 global.anchorsLen = anchors_len
