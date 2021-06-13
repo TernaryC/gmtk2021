@@ -3,3 +3,5 @@ if (global.paused) {
     checkButton(resume);
     checkButton(mute);
 }
+
+if (global.muted) audio_stop_all();

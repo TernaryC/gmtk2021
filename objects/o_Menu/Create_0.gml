@@ -1,5 +1,6 @@
 global.paused = false;
 global.muted = false;
+can_mute = true;
 
 left = 48;
 right = room_width - 48;

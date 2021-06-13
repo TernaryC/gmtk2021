@@ -9,6 +9,7 @@
     {"id":{"name":"o_Collectable","path":"objects/o_Collectable/o_Collectable.yy",},"order":3,},
     {"id":{"name":"LEVEL DESIGN GUIDELINES","path":"notes/LEVEL DESIGN GUIDELINES/LEVEL DESIGN GUIDELINES.yy",},"order":0,},
     {"id":{"name":"s_Switch","path":"sprites/s_Switch/s_Switch.yy",},"order":3,},
+    {"id":{"name":"Room_A3","path":"rooms/Room_A3/Room_A3.yy",},"order":7,},
     {"id":{"name":"s_Player","path":"sprites/s_Player/s_Player.yy",},"order":0,},
     {"id":{"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},"order":4,},
     {"id":{"name":"ARoomWithAView","path":"rooms/ARoomWithAView/ARoomWithAView.yy",},"order":4,},
@@ -92,6 +93,7 @@
         {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
       ],},
     {"roomId":{"name":"Room_Template","path":"rooms/Room_Template/Room_Template.yy",},},
+    {"roomId":{"name":"Room_A3","path":"rooms/Room_A3/Room_A3.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
