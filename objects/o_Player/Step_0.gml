@@ -10,6 +10,7 @@ if (!instance_exists(o_Menu)) {
 event_inherited();
 
 if (!global.paused) {
+	
 	xspd = (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * walkSpd;
 	yspd = (keyboard_check(ord("S")) - keyboard_check(ord("W"))) * walkSpd;
 	

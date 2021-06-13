@@ -3,6 +3,7 @@
 audio_group_load(ag_sfx);
 global.paused = false
 global.Dead = false
+global.paused = false
 walkSpd = 4
 xspd = 0
 yspd = 0
