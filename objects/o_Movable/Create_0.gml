@@ -5,26 +5,27 @@ baseX = x
 baseY = y
 
 additive = 1
+xspd = 0 
+yspd = 0
 if isLeftOrdDown{
 	additive = -1
 }
 
 self.Move = function(MovableIDEntry) {
-	var xspd = 0 
-	var yspd = 0
+	xspd = 0 
+	yspd = 0
 	
 	if MovableId == MovableIDEntry {
 		if distanceMoved< distanceMax{
 				if (!isVerticle){
-					
 					xspd = additive 
-					
+					scr_Push()
 					scr_Move(xspd,0)
 					distanceMoved++;
 				}
 				else{
 					yspd = additive;
-					
+					scr_Push()
 					scr_Move(0,yspd)
 					distanceMoved++;
 				}
@@ -39,7 +40,7 @@ self.MoveBack = function (MovableIDEntry) {
 	if MovableId == MovableIDEntry {
 		if (!isVerticle){
 			
-			if (baseX != x) {
+			if (distanceMoved >= 0) {
 				x = x-additive;
 				xoff = -additive;
 				distanceMoved--;
