@@ -18,7 +18,7 @@
   "layers": [
     {"instances":[
         {"properties":[
-            {"propertyId":{"name":"rope_length","path":"objects/o_rope_end/o_rope_end.yy",},"objectId":{"name":"o_rope_end","path":"objects/o_rope_end/o_rope_end.yy",},"value":"500","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"rope_length","path":"objects/o_rope_end/o_rope_end.yy",},"objectId":{"name":"o_rope_end","path":"objects/o_rope_end/o_rope_end.yy",},"value":"650","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.75,"scaleY":0.75,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_47E0A7AF","path":"rooms/Room_Template/Room_Template.yy",},"frozen":false,"ignore":false,"inheritItemSettings":false,"x":79.0,"y":217.0,"resourceVersion":"1.0","name":"inst_47E0A7AF","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"facing","path":"objects/o_rope_start/o_rope_start.yy",},"objectId":{"name":"o_rope_start","path":"objects/o_rope_start/o_rope_start.yy",},"value":"RIGHT","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
