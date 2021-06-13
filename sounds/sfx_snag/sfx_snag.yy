@@ -7,8 +7,8 @@
   "type": 0,
   "bitDepth": 0,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "ag_sfx",
+    "path": "audiogroups/ag_sfx",
   },
   "soundFile": "sfx_snag.wav",
   "duration": 0.031032,

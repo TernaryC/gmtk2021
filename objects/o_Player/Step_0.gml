@@ -9,14 +9,15 @@ if (!instance_exists(o_Menu)) {
 
 event_inherited();
 
-xspd = (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * walkSpd;
-yspd = (keyboard_check(ord("S")) - keyboard_check(ord("W"))) * walkSpd;
-
-moving = xspd + yspd != 0;
-
-if (xspd != 0 and sign(xspd) != lastx) lastx = sign(xspd);
-if (yspd != 0 and sign(yspd) != lasty) lasty = sign(yspd);
-
+if (!global.paused) {
+	xspd = (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * walkSpd;
+	yspd = (keyboard_check(ord("S")) - keyboard_check(ord("W"))) * walkSpd;
+	
+	moving = xspd + yspd != 0;
+	
+	if (xspd != 0 and sign(xspd) != lastx) lastx = sign(xspd);
+	if (yspd != 0 and sign(yspd) != lasty) lasty = sign(yspd);
+}
 //scr_Move(xspd, yspd)
 scr_Push()
 //show_debug_message(anchors)

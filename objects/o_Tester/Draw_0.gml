@@ -5,3 +5,4 @@ if (re != undefined) length = string(re.rope_length)
 if (global.superrope) length = "Unlimited"
 draw_text(5, 5, length);
 draw_text(5, 17, "Lockout: " + string(global.lockout));
+draw_text(5, 29, global.paused)
