@@ -152,7 +152,7 @@ self.findSnags = function (i) {
             //check for collision at point v
             var b = collision_point(v.x, v.y, o_rope_block, false, true);
 
-            if (b != noone) {
+            if (b != noone and b.object_index != o_Pushable) {
                 // Collision found
 
                 //get coordinates of corner that rope should hook onto

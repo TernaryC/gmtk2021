@@ -29,6 +29,7 @@
     {"id":{"name":"scr_Push","path":"scripts/scr_Push/scr_Push.yy",},"order":1,},
     {"id":{"name":"s_WallSingle","path":"sprites/s_WallSingle/s_WallSingle.yy",},"order":8,},
     {"id":{"name":"s_Bot_UL","path":"sprites/s_Bot_UL/s_Bot_UL.yy",},"order":2,},
+    {"id":{"name":"s_HollowBlock","path":"sprites/s_HollowBlock/s_HollowBlock.yy",},"order":9,},
     {"id":{"name":"o_Movable","path":"objects/o_Movable/o_Movable.yy",},"order":2,},
     {"id":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},"order":0,},
     {"id":{"name":"playground","path":"rooms/playground/playground.yy",},"order":0,},
@@ -44,6 +45,7 @@
     {"id":{"name":"macroenum","path":"scripts/macroenum/macroenum.yy",},"order":0,},
     {"id":{"name":"pos","path":"scripts/pos/pos.yy",},"order":1,},
     {"id":{"name":"print","path":"scripts/print/print.yy",},"order":2,},
+    {"id":{"name":"map","path":"scripts/map/map.yy",},"order":5,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},

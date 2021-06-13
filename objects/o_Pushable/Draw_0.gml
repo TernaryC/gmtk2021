@@ -8,14 +8,15 @@ var top  = y - sprite_height / 2;
 var tile_width = floor(sprite_width / 32);
 var tile_height = ceil(sprite_height / 32);
 
-for (var _y = -1; _y <= tile_height; _y++) {
+for (var _y = 0; _y <= tile_height; _y++) {
 	for (var _x = -1; _x <= tile_width; _x++) {
-		var i = _y == tile_height - 1 ? 0 : 1;
+		var i = 1
+		if (_y == tile_height - 2) i = 2
+		if (_y == tile_height - 1) i = 0
 		if (_x >= 0 and _x < tile_width and _y >= 0 and _y < tile_height) {
-			draw_sprite(s_WallSingle, i, left + _x * 32, top + _y * 32);
-			//draw_text(left + _x * 32, top + _y * 32, i)
+			draw_sprite(s_HollowBlock, i, left + _x * 32, top + _y * 32);
 		} else {
-			if (_y == -1) {
+			if (_y == 0) {
 				if (_x == -1)               i = 0;
 				else if (_x == tile_width) i = 1;
 				else					   i = 4;
@@ -34,9 +35,3 @@ for (var _y = -1; _y <= tile_height; _y++) {
 		}
 	}
 }
-
-
-
-
-
-
