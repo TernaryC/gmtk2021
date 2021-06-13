@@ -24,8 +24,17 @@ if (!global.paused) {
 	if (keyboard_check(ord("D"))) move( 5, RIGHT);
 }
 
-if (keyboard_check_pressed(ord("R"))) room_restart();
-if (keyboard_check_pressed(vk_escape)) global.paused = !global.paused;
+if (keyboard_check_pressed(ord("R"))) {
+	if (!o_Menu.wiping) {
+		o_Menu.wiping = true;
+		o_Menu.restart = true;
+		audio_group_stop_all(ag_sfx);
+		audio_play_sound(sfx_wipe, 1, false);
+	}
+}
+if (keyboard_check_pressed(vk_escape)) {
+	if (!o_Menu.wiping) global.paused = !global.paused;
+}
 
 global.anchors = anchors
 global.anchorsLen = anchors_len

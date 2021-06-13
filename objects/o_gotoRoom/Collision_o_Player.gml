@@ -1,5 +1,7 @@
 if (!global.lockout) {
-    audio_group_stop_all(ag_sfx);
-    audio_play_sound(sfx_success, 1, false);
-    room_goto_next();
+    if (!audio_is_playing(sfx_success) and !o_Menu.wiping) {
+        audio_play_sound(sfx_success, 1, false);
+        audio_group_stop_all(ag_sfx);
+    }
+    o_Menu.wiping = true;
 }

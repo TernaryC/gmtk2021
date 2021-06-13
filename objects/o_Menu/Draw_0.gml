@@ -1,3 +1,22 @@
+if (wiping) {
+    draw_set_color(c_black);
+    draw_set_alpha(1);
+    
+    var lim0, lim1;
+    if (wipedir ==  0) { lim0 = 0; lim1 = room_width;  }
+    if (wipedir ==  1) { lim0 = 0; lim1 = room_height; }
+    if (wipedir ==  2) { lim1 = 0; lim0 = room_width;  }
+    if (wipedir ==  3) { lim1 = 0; lim0 = room_height; }
+    //print(wipedir)
+    
+    var w1 = map(wipe,  0, 20, lim0, lim1);
+    var w2 = map(wipe, 30, 50, lim0, lim1);
+    if (wipedir == 0 || wipedir == 2)
+        draw_rectangle(w2, 0, w1, room_height, false);
+    if (wipedir == 1 || wipedir == 3)
+        draw_rectangle(0, w2, room_width, w1, false);
+}
+
 if (global.paused) {
     draw_set_color(c_black);
     draw_set_alpha(0.5);

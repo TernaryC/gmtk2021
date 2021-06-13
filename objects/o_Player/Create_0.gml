@@ -12,4 +12,6 @@ moving = false
 lastx = 1
 lasty = 1
 
+dying = false
+
 event_inherited();

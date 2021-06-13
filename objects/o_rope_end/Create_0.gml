@@ -25,7 +25,7 @@ self.move = function (distance, angle, force) {
 			
 			//converts your movement system to my movement system
     		//which will check for collisions
-    		scr_Move(v.x-x, v.y-y)
+    		scr_Move(v.x-x, v.y-y, object_index)
 
             //move the last anchor in the list to the player's
             // new position
