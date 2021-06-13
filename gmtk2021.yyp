@@ -6,6 +6,7 @@
     {"id":{"name":"LEVEL DESIGN GUIDELINES","path":"notes/LEVEL DESIGN GUIDELINES/LEVEL DESIGN GUIDELINES.yy",},"order":0,},
     {"id":{"name":"s_Switch","path":"sprites/s_Switch/s_Switch.yy",},"order":3,},
     {"id":{"name":"s_Player","path":"sprites/s_Player/s_Player.yy",},"order":0,},
+    {"id":{"name":"FollowingJenniBullshit","path":"rooms/FollowingJenniBullshit/FollowingJenniBullshit.yy",},"order":4,},
     {"id":{"name":"s_wallDown","path":"sprites/s_wallDown/s_wallDown.yy",},"order":4,},
     {"id":{"name":"ts_lab","path":"tilesets/ts_lab/ts_lab.yy",},"order":0,},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},"order":1,},
@@ -58,6 +59,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"FollowingJenniBullshit","path":"rooms/FollowingJenniBullshit/FollowingJenniBullshit.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"testRoom","path":"rooms/testRoom/testRoom.yy",},},
