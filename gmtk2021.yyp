@@ -88,12 +88,12 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
     {"roomId":{"name":"A3","path":"rooms/A3/A3.yy",},},
     {"roomId":{"name":"Room_A1","path":"rooms/Room_A1/Room_A1.yy",},},
     {"roomId":{"name":"Room_1","path":"rooms/Room_1/Room_1.yy",},},
     {"roomId":{"name":"ARoomWithAView","path":"rooms/ARoomWithAView/ARoomWithAView.yy",},},
     {"roomId":{"name":"Room_A2","path":"rooms/Room_A2/Room_A2.yy",},},
-    {"roomId":{"name":"playground","path":"rooms/playground/playground.yy",},},
     {"roomId":{"name":"demo_room","path":"rooms/demo_room/demo_room.yy",},},
     {"roomId":{"name":"DeathPit","path":"rooms/DeathPit/DeathPit.yy",},},
     {"roomId":{"name":"Room_2","path":"rooms/Room_2/Room_2.yy",},},

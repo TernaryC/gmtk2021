@@ -24,6 +24,7 @@ self.Move = function(MovableIDEntry) {
 					xspd = additive 
 					
 					if (!place_meeting(x + xspd, y, o_Player)) {
+						scr_Push(object_index)
 						scr_Move(xspd,0,object_index)
 						distanceMoved++;
 						moved = true;
@@ -33,6 +34,7 @@ self.Move = function(MovableIDEntry) {
 					yspd = additive;
 					
 					if (!place_meeting(x, y + yspd, o_Player)) {
+						scr_Push(object_index)
 						scr_Move(0,yspd,object_index)
 						distanceMoved++;
 						moved = true;
