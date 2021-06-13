@@ -1,5 +1,6 @@
 
 draw_self()
+depth = 9999
 if (facing == RIGHT) image_index = 0
 if (facing == LEFT)  image_index = 1
 if (facing == DOWN)  image_index = 2
